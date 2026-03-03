@@ -12,6 +12,15 @@ authors = [
 ]
 requires-python = ">=3.12, <3.13"
 readme = "README.md"
+license = {text = "CC-BY-NC-4.0"}
+keywords = ["nlp", "text-classification", "ner", "few-shot", "setfit", "automl", "llm", "data-augmentation", "nlu", "data-quality", "python", "transformers"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = [
     "pandas==2.3.3",
     "numpy==2.3.3",
@@ -61,6 +70,11 @@ dependencies = [
     "plotly==6.5.2",
 ]
 
+[project.urls]
+Homepage = "https://github.com/mts-ai/OpenAutoNLU"
+Repository = "https://github.com/mts-ai/OpenAutoNLU"
+Issues = "https://github.com/mts-ai/OpenAutoNLU/issues"
+
 [project.optional-dependencies]
 cpu = [
     "torch==2.6.0",
@@ -105,7 +119,6 @@ torch = [
     { index = "torch_cpu" , extra = "cpu"},
     { index = "torch_cu124" , extra = "cuda"},
 ]
-
 
 [[tool.uv.index]]
 name = "torch_cpu"
