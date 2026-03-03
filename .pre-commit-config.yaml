@@ -1,0 +1,57 @@
+exclude: ".git"
+fail_fast: false
+
+repos:
+  - repo: local
+    hooks:
+      - id: end-of-file-fixer
+        name: Fix End of Files
+        description: Ensures that a file is either empty, or ends with one newline.
+        entry: end-of-file-fixer
+        language: system
+        types: [python]
+        files: \.py$
+        stages: [pre-commit, pre-push, manual]
+
+      - id: mixed-line-ending
+        name: Mixed line ending
+        description: Replaces or checks mixed line ending
+        entry: mixed-line-ending
+        language: system
+        files: \.py$
+        types: [python]
+
+      - id: trailing-whitespace
+        name: Trim Trailing Whitespace
+        description: This hook trims trailing whitespace.
+        entry: trailing-whitespace-fixer
+        language: system
+        files: \.py$
+        types: [python]
+        stages: [pre-commit, pre-push, manual]
+
+      # - id: check-poetry
+      #   name: Poetry check
+      #   description: Validates the structure of the pyproject.toml file
+      #   entry: poetry check
+      #   language: system
+      #   pass_filenames: false
+      #   files: pyproject.toml
+
+      - id: ruff
+        name: ruff
+        entry: ruff check
+        language: system
+        files: \.py$
+        types: [python]
+        args: [--fix]
+        exclude: open_autonlu/nervaluate
+
+      - id: ruff-format
+        name: ruff-format
+        description: A formatter for Python files.
+        entry: ruff format
+        language: system
+        files: \.py$
+        types_or: [python]
+        require_serial: true

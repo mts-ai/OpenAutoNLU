@@ -1,0 +1,24 @@
+services:
+  automl:
+    build:
+      context: .
+      args:
+        EXTRA: cuda
+    container_name: automl_demo
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./saved_models:/app/saved_models
+    deploy:
+      resources:
+        limits:
+          cpus: '8'
+          memory: '16gb'
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+

@@ -1,0 +1,60 @@
+/* (1) & (6) Make constants and data attributes compact like a table */
+dl.py.data {
+    margin-bottom: 0.3em;
+    padding: 0.2em 0;
+    border-bottom: 1px solid #eee;
+}
+
+dl.py.data:last-child {
+    border-bottom: none;
+}
+
+dl.py.data dt {
+    font-weight: bold;
+    display: inline-block;
+    min-width: 300px;
+}
+
+dl.py.data dd {
+    display: inline;
+    margin-left: 0;
+}
+
+dl.py.data dd p {
+    display: inline;
+    margin: 0;
+}
+
+/* Hide the "value:" label for cleaner look */
+dl.py.data .field-list {
+    display: inline;
+}
+
+/* Make class attributes more compact */
+dl.py.attribute {
+    margin-bottom: 0.5em;
+    padding: 0.3em 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+dl.py.attribute:last-child {
+    border-bottom: none;
+}
+
+dl.py.attribute dt {
+    margin-bottom: 0.2em;
+}
+
+dl.py.attribute dd {
+    margin-left: 1.5em;
+    margin-bottom: 0;
+}
+
+/* Compact method signatures */
+dl.py.method {
+    margin-bottom: 0.8em;
+}
+
+dl.py.method dt {
+    padding: 0.3em 0;
+}
