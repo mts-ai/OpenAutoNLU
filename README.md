@@ -1,5 +1,8 @@
 # OpenAutoNLU Pipeline
 
+[![arXiv](https://img.shields.io/badge/arXiv-2603.01824-b31b1b.svg)](https://arxiv.org/abs/2603.01824)
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/)
+
 OpenAutoNLU is an open-source pipeline for training natural language understanding (NLU) models for **text classification** (multiclass) and **named entity recognition (NER)**. It supports few-shot learning (SetFit, AncSetFit with optional anchor labels), classic fine-tuning, data quality diagnostics, out-of-distribution (OOD) detection, optional LLM-based augmentation and synthetic test generation, and ONNX export for deployment.
 
 You provide train (and optionally test) data; high-level pipelines (`TextClassificationTrainingPipeline`, `TokenClassificationTrainingPipeline`) load it, run optional data-quality checks, then **automatically choose the training method** from the data: **AncSetFit** for very small datasets (2–5 samples per class), **SetFit** for medium size (6–80), and **fine-tuning** for larger data. You can override configs (batch size, OOD method, augmentation, etc.) and save models in ONNX format. A Streamlit app and Docker images (CPU/GPU) are included for interactive use.
