@@ -1,6 +1,7 @@
 # OpenAutoNLU Pipeline
 
 [![arXiv](https://img.shields.io/badge/arXiv-2603.01824-b31b1b.svg)](https://arxiv.org/abs/2603.01824)
+[![PyPI](https://img.shields.io/pypi/v/open-autonlu?label=PyPI%20package&color=green)](https://pypi.org/project/open-autonlu/)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/)
 
 OpenAutoNLU is an open-source pipeline for training natural language understanding (NLU) models for **text classification** (multiclass) and **named entity recognition (NER)**. It supports few-shot learning (SetFit, AncSetFit with optional anchor labels), classic fine-tuning, data quality diagnostics, out-of-distribution (OOD) detection, optional LLM-based augmentation and synthetic test generation, and ONNX export for deployment.
@@ -14,6 +15,16 @@ Built by MWS AI and contributors (see [pyproject.toml](pyproject.toml) for autho
 Usage examples are located in the `examples` folder.
 
 ## Installation
+
+Install from PyPI:
+```bash
+pip install "open-autonlu[cpu]"
+# or with CUDA support:
+pip install "open-autonlu[cuda]"
+```
+
+Development mode:
+
 To work with the repository in developer mode, install it as an editable package:
 ```bash
 pip install -e .
@@ -222,10 +233,18 @@ result = pipeline.train()  # Test data generated automatically
 
 ### Method-Specific Overrides
 
+You can override default parameters for a specific training method by using the method class name as a key. Note that **overriding a method's defaults does not force the pipeline to use that method** — the pipeline always selects the method automatically based on the dataset. The overrides will only take effect if the pipeline selects that particular method.
+
+Available method keys:
+- Base methods: `SetFitMethod`, `AncSetFitMethod`, `Finetuner`, `TokenClassificationFinetuner`
+- OOD methods: `SetFitOOD`, `AncSetFitOOD`, `FinetunerWithOOD`
+
+All overridable parameters are defined in the corresponding config classes in `open_autonlu/methods/configs/`.
+
 ```python
 # SetFit configuration
 config_overrides = {
-    "SetFitMethodConfig": {
+    "SetFitMethod": {
         "num_iterations": 25,
         "body_lr": 2e-5,
         "batch_size": 16,
@@ -234,7 +253,7 @@ config_overrides = {
 
 # Finetuner configuration
 config_overrides = {
-    "FinetunerConfig": {
+    "Finetuner": {
         "num_hpo_trials": 15,  # Hyperparameter optimization trials
     }
 }
