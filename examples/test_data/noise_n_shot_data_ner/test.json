@@ -1,0 +1,2429 @@
+[
+  {
+    "text": "what day of the week is [date : first april]"
+  },
+  {
+    "text": "what is a work phone number of [person : emilia]"
+  },
+  {
+    "text": "where is the pharmacy in [place_name : leavenworth]"
+  },
+  {
+    "text": "tell me [person : billy crytals] address"
+  },
+  {
+    "text": "what's the recipe for [food_type : fish soup]"
+  },
+  {
+    "text": "olly where do [place_name : the rocky mountains] start"
+  },
+  {
+    "text": "buy me a ticket to [place_name : boston]"
+  },
+  {
+    "text": "how [weather_descriptor : cold] will it get each night [date : this week]"
+  },
+  {
+    "text": "hey olly i met one of my old classmates [date : today]"
+  },
+  {
+    "text": "what is the [date : ten day] forecast"
+  },
+  {
+    "text": "what movies are out [date : this week]"
+  },
+  {
+    "text": "please add an email for [person : john doe] to my contacts johndoe at yahoo dot com"
+  },
+  {
+    "text": "what do we have on [media_type : new york time's] front page"
+  },
+  {
+    "text": "what month is [date : today]"
+  },
+  {
+    "text": "olly tell me about activities in my area [date : this weekend]"
+  },
+  {
+    "text": "[place_name : new york]"
+  },
+  {
+    "text": "call [transport_type : taxi]"
+  },
+  {
+    "text": "play the last doctor who [media_type : radio broadcast]"
+  },
+  {
+    "text": "will the [weather_descriptor : temperature] stay about the same or is it going to get colder"
+  },
+  {
+    "text": "what's the next event at the [place_name : library]"
+  },
+  {
+    "text": "what's going on around here [date : this weekend]"
+  },
+  {
+    "text": "play romantic [media_type : music] in nash f. m. ninety two point seven"
+  },
+  {
+    "text": "will it [weather_descriptor : rain] [date : tomorrow]"
+  },
+  {
+    "text": "please tell me what is the time in [place_name : sanfranscio]"
+  },
+  {
+    "text": "get rid of the events on the [date : nineteenth] from my calendar"
+  },
+  {
+    "text": "tell me something to remind [date : this week]"
+  },
+  {
+    "text": "what is scheduled on my calendar [date : today]"
+  },
+  {
+    "text": "i need to get a ticket via [transport_type : train] to [place_name : orlando from hwood]"
+  },
+  {
+    "text": "are there any special events near me [date : this weekend]"
+  },
+  {
+    "text": "what time is it in [place_name : cleveland]"
+  },
+  {
+    "text": "what happened to the dow jones [date : today]"
+  },
+  {
+    "text": "what is the capital of [place_name : mexico]"
+  },
+  {
+    "text": "open contacts and call [person : john smith]"
+  },
+  {
+    "text": "what is [person : denzel washington's] next movie"
+  },
+  {
+    "text": "anything interesting going on in the [place_name : bay area]"
+  },
+  {
+    "text": "olly how long should i boil the [food_type : egg]"
+  },
+  {
+    "text": "what's happening around my [place_name : town]"
+  },
+  {
+    "text": "open [weather_descriptor : temperature]"
+  },
+  {
+    "text": "[place_name : california]"
+  },
+  {
+    "text": "can you book a [transport_type : train] ticket"
+  },
+  {
+    "text": "create email to [person : yulia]"
+  },
+  {
+    "text": "prepare email for [person : susan]"
+  },
+  {
+    "text": "please send an email to [person : cassy] who is there on my family and friend list"
+  },
+  {
+    "text": "call [transport_type : yellow cab]"
+  },
+  {
+    "text": "do you recommend an [weather_descriptor : umbrellas]"
+  },
+  {
+    "text": "[date : tomorrow's] [weather_descriptor : temperature] is to be [weather_descriptor : hot] yes or no"
+  },
+  {
+    "text": "what's the best way to [place_name : sheffield]"
+  },
+  {
+    "text": "what is the latest story from [media_type : fox news]"
+  },
+  {
+    "text": "send an email to [person : jerry] ask what time will he be home tonight"
+  },
+  {
+    "text": "what is the forecast for [date : saturday]"
+  },
+  {
+    "text": "give me a weather report for [place_name : las vegas]"
+  },
+  {
+    "text": "does [person : kim kardashian] wear converse"
+  },
+  {
+    "text": "is there any [weather_descriptor : rain] in the forecast for the [date : next week]"
+  },
+  {
+    "text": "what time is it in [place_name : new york] now"
+  },
+  {
+    "text": "is it going to [weather_descriptor : rain] later"
+  },
+  {
+    "text": "has [person : amy] sent me any new emails"
+  },
+  {
+    "text": "how old is [person : clint eastwood]"
+  },
+  {
+    "text": "hey has [person : john] sent me any email lately"
+  },
+  {
+    "text": "will there be [weather_descriptor : rain] [date : tomorrow] in [place_name : rome]"
+  },
+  {
+    "text": "please give me [date : todays] forecast for [place_name : new york city]"
+  },
+  {
+    "text": "find [date : today's] [media_type : wapo] articles about trump"
+  },
+  {
+    "text": "can you really see [place_name : russia] from [place_name : alaska]"
+  },
+  {
+    "text": "let's [media_type : tweet] a complaint"
+  },
+  {
+    "text": "i want to reply to [person : bob smith's] email"
+  },
+  {
+    "text": "i want to know everything that breaks about the dam breaking in [place_name : california]"
+  },
+  {
+    "text": "add the post office to my list of errands for [date : saturday]"
+  },
+  {
+    "text": "open harrypotter [media_type : audiobook] and play from last played"
+  },
+  {
+    "text": "what is the weather in [place_name : pittsburgh]"
+  },
+  {
+    "text": "how many phone numbers do i have for [person : brenden]"
+  },
+  {
+    "text": "when did [person : elvis] die"
+  },
+  {
+    "text": "what is the date for next [date : tuesday]"
+  },
+  {
+    "text": "find a [transport_type : train] ticket to [place_name : philadelphia]"
+  },
+  {
+    "text": "what is the first [transport_type : metro] to [place_name : d. c.]"
+  },
+  {
+    "text": "[media_type : tweet] at"
+  },
+  {
+    "text": "what i like [date : today]"
+  },
+  {
+    "text": "post in [media_type : twitter] my visit to japan"
+  },
+  {
+    "text": "hey what time is it in [place_name : dallas texas]"
+  },
+  {
+    "text": "book my [transport_type : train] ticket from [place_name : las vegas] to [place_name : los angeles]"
+  },
+  {
+    "text": "help is to be sent only to [person : jane]"
+  },
+  {
+    "text": "post hey everyone on [media_type : facebook]"
+  },
+  {
+    "text": "beep when i get an email from [person : john]"
+  },
+  {
+    "text": "how far is [place_name : canada] from my current location"
+  },
+  {
+    "text": "has anyone follow me today on [media_type : twitter] [date : today]"
+  },
+  {
+    "text": "post a [media_type : tweet] as follows very bad follow up by a. b. c. company not satisfied in my account"
+  },
+  {
+    "text": "find me the cheapest [transport_type : train] ticket to [place_name : spain]"
+  },
+  {
+    "text": "purchase ticket to [place_name : new york city] on [transport_type : train]"
+  },
+  {
+    "text": "what movies has [person : emma watson] acted in"
+  },
+  {
+    "text": "olly what events are happening in [place_name : pondichery] [date : this weekend]"
+  },
+  {
+    "text": "what's the [weather_descriptor : temperature] outside"
+  },
+  {
+    "text": "olly what is the weather forecast for [date : today]"
+  },
+  {
+    "text": "tell me current events between [date : yesterday] and this morning"
+  },
+  {
+    "text": "is there [weather_descriptor : snow] in the forecast"
+  },
+  {
+    "text": "add a lunch with [person : mike]"
+  },
+  {
+    "text": "please play this playback on [media_type : audiobook]"
+  },
+  {
+    "text": "confirm a travel ticket to [place_name : german]"
+  },
+  {
+    "text": "what is my schedule for [date : the day]"
+  },
+  {
+    "text": "remove my dinner event for [date : monday]"
+  },
+  {
+    "text": "what will the weather be [date : tomorrow]"
+  },
+  {
+    "text": "are there any free events on in my area [date : today]"
+  },
+  {
+    "text": "what is the traffic situation at the [place_name : bazaar highway]"
+  },
+  {
+    "text": "is there anything happening on jazz scene around [place_name : edinburgh]"
+  },
+  {
+    "text": "email [person : alice] to let her know we are on the way"
+  },
+  {
+    "text": "where are [place_name : pyramids] located"
+  },
+  {
+    "text": "google [transport_type : train] tickets to [place_name : washington d. c.]"
+  },
+  {
+    "text": "will i need [weather_descriptor : sunscreen] this afternoon"
+  },
+  {
+    "text": "quick reply to [person : jack] so please send a mail"
+  },
+  {
+    "text": "[date : today] is what date"
+  },
+  {
+    "text": "send mail to [person : ismail] for office opening time table"
+  },
+  {
+    "text": "[media_type : b. b. c. world] headlines"
+  },
+  {
+    "text": "tell me all events for [date : today] in my city"
+  },
+  {
+    "text": "book a first class ticket in the next [transport_type : train] to [place_name : miami]"
+  },
+  {
+    "text": "i want two [food_type : burgers] and one [food_type : coke] order it fast"
+  },
+  {
+    "text": "book a [transport_type : train] ticket [date : weekend of the twenty sixth] [place_name : phoenix] to [place_name : los angeles]"
+  },
+  {
+    "text": "where i went [date : today]"
+  },
+  {
+    "text": "tell me about [place_name : india] location"
+  },
+  {
+    "text": "which teams are playing [date : today] in the premier league"
+  },
+  {
+    "text": "please change time zone to [place_name : canada]"
+  },
+  {
+    "text": "how is the weather like [date : today]"
+  },
+  {
+    "text": "check for emails from [person : steve]"
+  },
+  {
+    "text": "has [person : john] sent me an email"
+  },
+  {
+    "text": "please check new email from [person : andy]"
+  },
+  {
+    "text": "please show [date : today] meeting with clients"
+  },
+  {
+    "text": "how do i cook [food_type : butter chicken]"
+  },
+  {
+    "text": "what did [media_type : vogue] post [date : today]"
+  },
+  {
+    "text": "how large is [place_name : alaska]"
+  },
+  {
+    "text": "do i have anything planned for the [date : twenty first]"
+  },
+  {
+    "text": "call an [transport_type : uberpool] to get me at [place_name : long island bar]"
+  },
+  {
+    "text": "remove the guest list i created [date : last week]"
+  },
+  {
+    "text": "open davinci code [media_type : audiobook]"
+  },
+  {
+    "text": "please book [transport_type : train] ticket from [place_name : mumbai] to [place_name : sangli] for [date : tomorrow] morning"
+  },
+  {
+    "text": "[transport_type : train] ticket please"
+  },
+  {
+    "text": "what do you want to do [date : today]"
+  },
+  {
+    "text": "display the local time of [place_name : london] at this moment"
+  },
+  {
+    "text": "respond to my email from [person : bob] letting them know i'll see them [date : tomorrow]"
+  },
+  {
+    "text": "what time is it in [place_name : london]"
+  },
+  {
+    "text": "[date : today] i saw a bulldog"
+  },
+  {
+    "text": "will i need an [weather_descriptor : umbrella] [date : this week]"
+  },
+  {
+    "text": "olly get me the popular news from [media_type : b. b. c.]"
+  },
+  {
+    "text": "can i please have the weather for [date : tomorrow] here in [place_name : costa mesa]"
+  },
+  {
+    "text": "i need some details about [person : bruce lee] please assist"
+  },
+  {
+    "text": "what is the interview time from [date : yesterday's] email"
+  },
+  {
+    "text": "what are [date : todays] top podcasts"
+  },
+  {
+    "text": "how is the traffic presently near [place_name : central park road]"
+  },
+  {
+    "text": "continue the last chapter of the [media_type : audio book] i was listening to"
+  },
+  {
+    "text": "what is the commute time to the [place_name : theater]"
+  },
+  {
+    "text": "what is the capitol of [place_name : west virginia]"
+  },
+  {
+    "text": "i want to hear the last news from [media_type : c. n. n.]"
+  },
+  {
+    "text": "please retweet this post on [media_type : twitter]"
+  },
+  {
+    "text": "please show me any articles related to weather in the [media_type : morning news]"
+  },
+  {
+    "text": "please send an email to uncle [person : john] with the following yes i can make it"
+  },
+  {
+    "text": "how old is [person : emma watson] newest boyfriend"
+  },
+  {
+    "text": "how do i make [food_type : pizza]"
+  },
+  {
+    "text": "what is the wake up time for my alarm i have set for the flight [date : this weekend]"
+  },
+  {
+    "text": "should i wear [weather_descriptor : raincoat] before getting out"
+  },
+  {
+    "text": "find me a [transport_type : train] ticket to [place_name : boston]"
+  },
+  {
+    "text": "what's the weather for my location [date : this week]"
+  },
+  {
+    "text": "how long will it take to get to the [place_name : airport]"
+  },
+  {
+    "text": "post this to my [media_type : facebook] l. o. l."
+  },
+  {
+    "text": "should i wear a [weather_descriptor : jacket]"
+  },
+  {
+    "text": "what shops are [place_name : round here]"
+  },
+  {
+    "text": "what's the recipe for [food_type : fried chicken]"
+  },
+  {
+    "text": "what was the last movie [person : will smith] was in"
+  },
+  {
+    "text": "[person : jay's] phone number"
+  },
+  {
+    "text": "could you please confirm if [person : leonardo] is married"
+  },
+  {
+    "text": "olly i'm looking for some dress shows can you find clothing stores [place_name : within one mile]"
+  },
+  {
+    "text": "is my alarm set for [date : tomorrow] morning"
+  },
+  {
+    "text": "hey what will the weather be like to [date : today] in [place_name : los angeles california]"
+  },
+  {
+    "text": "what is the email address for [person : tessa]"
+  },
+  {
+    "text": "will i need [weather_descriptor : sunscreen] later"
+  },
+  {
+    "text": "resume the song from the [media_type : audiobook] by the beatles"
+  },
+  {
+    "text": "tell me about [person : mary s.]"
+  },
+  {
+    "text": "is [person : jessica's] birthday on [date : april twelfth]"
+  },
+  {
+    "text": "i want coffee [date : everyday]"
+  },
+  {
+    "text": "clear my activities list for [date : today]"
+  },
+  {
+    "text": "read me the latest headlines from [media_type : nytimescom]"
+  },
+  {
+    "text": "play [media_type : audiobook] of planets"
+  },
+  {
+    "text": "show [person : john's] contact information"
+  },
+  {
+    "text": "do we have [person : morgan's] office's number"
+  },
+  {
+    "text": "please read my [media_type : facebook] feed"
+  },
+  {
+    "text": "what is the weather condition in [place_name : new york]"
+  },
+  {
+    "text": "has [person : tom] emailed me about ammunition"
+  },
+  {
+    "text": "how long should i boil an [food_type : egg]"
+  },
+  {
+    "text": "does [person : allearsnet] have a new podcast"
+  },
+  {
+    "text": "i want to order [food_type : chinese] take-out"
+  },
+  {
+    "text": "who was the current prime minister of [place_name : britain]"
+  },
+  {
+    "text": "f. m. ninety three point five radio [media_type : songs]"
+  },
+  {
+    "text": "what new movie is [person : jennifer lawrence] working on"
+  },
+  {
+    "text": "what is the current state of the investigation into trump's ties with [place_name : russia]"
+  },
+  {
+    "text": "what i am going to do [date : today]"
+  },
+  {
+    "text": "what kind of weather should i expect [date : this week]"
+  },
+  {
+    "text": "send [person : john smith] and email"
+  },
+  {
+    "text": "what are my plans for the [date : month of may]"
+  },
+  {
+    "text": "add a new email for [person : julie smith]"
+  },
+  {
+    "text": "what is the most current exchange rate in [place_name : china]"
+  },
+  {
+    "text": "do i have anything set for [date : the fourth of july this year]"
+  },
+  {
+    "text": "what is the time difference between here and [place_name : japan]"
+  },
+  {
+    "text": "i want tickets to the sold out concert on [date : saturday] night"
+  },
+  {
+    "text": "where can i get a shot of [food_type : tequila] and some to go [food_type : mexican] food"
+  },
+  {
+    "text": "have i received any emails from [person : jeffrey burnette]"
+  },
+  {
+    "text": "what region is [place_name : miami] located"
+  },
+  {
+    "text": "set an event for [date : friday]"
+  },
+  {
+    "text": "any breaking news from the [media_type : huffington post]"
+  },
+  {
+    "text": "give me the weather forecast for [date : this week]"
+  },
+  {
+    "text": "how long will it take to travel to [place_name : japan] from [place_name : south korea]"
+  },
+  {
+    "text": "what did i tell [person : susan] in my last email"
+  },
+  {
+    "text": "what does my [media_type : facebook] feed look like"
+  },
+  {
+    "text": "is there any post from my friend [person : mike] in [media_type : facebook]"
+  },
+  {
+    "text": "how long should i cook a [food_type : steak] to achieve medium rare"
+  },
+  {
+    "text": "what time is it in [place_name : austin]"
+  },
+  {
+    "text": "are there any alarms going off [date : today]"
+  },
+  {
+    "text": "how has your day been [date : today]"
+  },
+  {
+    "text": "what are [date : today's] sports news"
+  },
+  {
+    "text": "how tall is [person : brad pitt]"
+  },
+  {
+    "text": "stop [media_type : audiobook]"
+  },
+  {
+    "text": "post to [media_type : facebook] i'm hungry"
+  },
+  {
+    "text": "get rid of tax list from [date : nineteen ninety]"
+  },
+  {
+    "text": "what's the easiest way to cook [food_type : pasta]"
+  },
+  {
+    "text": "tell me the largest ocean in the [place_name : world]"
+  },
+  {
+    "text": "what time does the [transport_type : train] to place leave"
+  },
+  {
+    "text": "please book a ticket form [place_name : jaipur] to [place_name : mumbai] on [date : tuesday]"
+  },
+  {
+    "text": "get city [transport_type : cab] here to [place_name : airport]"
+  },
+  {
+    "text": "what's been happening for the [date : last two months]"
+  },
+  {
+    "text": "i want to hear the latest [place_name : world] news from [date : today]"
+  },
+  {
+    "text": "[food_type : thanksgiving turkey] cooking procedure in five sentences is what"
+  },
+  {
+    "text": "do not speak [date : today]"
+  },
+  {
+    "text": "how is [food_type : lasagne] made"
+  },
+  {
+    "text": "get me the popular news from [media_type : b. b. c.]"
+  },
+  {
+    "text": "will it be a [weather_descriptor : sticky] night"
+  },
+  {
+    "text": "show me a [media_type : video] on cooking [food_type : fried chicken]"
+  },
+  {
+    "text": "check any mail from [person : amazon]"
+  },
+  {
+    "text": "could you please give me up to date news headlines from my [media_type : newest provider]"
+  },
+  {
+    "text": "send a reply to [person : mike] with the answer four hundred and thirty from his email he sent this morning"
+  },
+  {
+    "text": "what's the news for [date : today]"
+  },
+  {
+    "text": "is it going to be [weather_descriptor : sunny] next [date : tuesday]"
+  },
+  {
+    "text": "i want to know more about the fair [date : this weekend]"
+  },
+  {
+    "text": "may i have a list of five star hotels in [place_name : paris]"
+  },
+  {
+    "text": "show geographic details of [place_name : pyramids]"
+  },
+  {
+    "text": "what is the highest building in the [place_name : world]"
+  },
+  {
+    "text": "what is the time difference between [place_name : california] and [place_name : new york]"
+  },
+  {
+    "text": "what's the exchange rates between [place_name : u. s. a.] and [place_name : china]"
+  },
+  {
+    "text": "what time is it in [place_name : london] right now"
+  },
+  {
+    "text": "can i get a recipe for [food_type : tuna]"
+  },
+  {
+    "text": "email [person : chelsea]"
+  },
+  {
+    "text": "look for [food_type : apple pie] recipe"
+  },
+  {
+    "text": "has [person : cassie] sent me any emails about [person : tom]"
+  },
+  {
+    "text": "tell me how to cook [food_type : meatballs]"
+  },
+  {
+    "text": "where is [place_name : yosemite park]"
+  },
+  {
+    "text": "olly book me a ticket to [place_name : paris] on eurostar [date : this weekend]"
+  },
+  {
+    "text": "read me the latest [place_name : international] news"
+  },
+  {
+    "text": "i got promoted [date : today] it feels so good"
+  },
+  {
+    "text": "what is the [weather_descriptor : temperature]"
+  },
+  {
+    "text": "check time of ten thousand eight hundred and eighty seven [transport_type : train] from [place_name : luni station] on [date : tuesday]"
+  },
+  {
+    "text": "delete the next event [date : today]"
+  },
+  {
+    "text": "what movie should i watch [date : today]"
+  },
+  {
+    "text": "tell me what the date is [date : today]"
+  },
+  {
+    "text": "where is [place_name : new zealand] located on a map"
+  },
+  {
+    "text": "who mailed me [date : yesterday]"
+  },
+  {
+    "text": "show me the current time in [place_name : germany]"
+  },
+  {
+    "text": "what time does the first [transport_type : train] depart from [place_name : chicago]"
+  },
+  {
+    "text": "where was [person : will ferrell] seen [date : last night]"
+  },
+  {
+    "text": "what is the birth year of [person : barack obama]"
+  },
+  {
+    "text": "what is the weather forecast for [date : this week]"
+  },
+  {
+    "text": "find the recipe for [food_type : sambar] in cookingforu application"
+  },
+  {
+    "text": "what is the time now in [place_name : new york]"
+  },
+  {
+    "text": "present time in [place_name : new york]"
+  },
+  {
+    "text": "what is the weather [date : this week] for [place_name : miami]"
+  },
+  {
+    "text": "where does [person : kate middleton] buy her kids clothes"
+  },
+  {
+    "text": "make a list about [person : selena gomez] concert schedule"
+  },
+  {
+    "text": "fastest route to [place_name : turiellos]"
+  },
+  {
+    "text": "what's happening [place_name : around town]"
+  },
+  {
+    "text": "what's the currency exchange rate for [place_name : china]"
+  },
+  {
+    "text": "what are the traffic conditions on the [place_name : one hundred and one]"
+  },
+  {
+    "text": "how are you feeling [date : today]"
+  },
+  {
+    "text": "i need to find a gift what stores are [place_name : within a one mile radius]"
+  },
+  {
+    "text": "what's my schedule like [date : today]"
+  },
+  {
+    "text": "what's [person : jlo] up to"
+  },
+  {
+    "text": "what day is [date : december thirteenth]"
+  },
+  {
+    "text": "do i have anything scheduled for [date : today]"
+  },
+  {
+    "text": "check unread emails from [person : amy]"
+  },
+  {
+    "text": "what is the population of [place_name : new york]"
+  },
+  {
+    "text": "book a [transport_type : train] ticket from [place_name : baltimore maryland] to [place_name : new york new york]"
+  },
+  {
+    "text": "i need to get a ticket via [transport_type : train] to [place_name : orlando from hwood]"
+  },
+  {
+    "text": "what's [date : this week's] weather"
+  },
+  {
+    "text": "yes or no [date : tomorrow's] [weather_descriptor : temperature] is to be [weather_descriptor : hot]"
+  },
+  {
+    "text": "is the [date : twenty second] on a wednesday"
+  },
+  {
+    "text": "what is the population of [place_name : russia]"
+  },
+  {
+    "text": "what all goes into a [food_type : red velvet cake]"
+  },
+  {
+    "text": "list out my schedule [date : today]"
+  },
+  {
+    "text": "how do i make a [food_type : turkey]"
+  },
+  {
+    "text": "olly i need to hear some sad songs [date : today]"
+  },
+  {
+    "text": "is my schedule for [date : july seventh] completely open"
+  },
+  {
+    "text": "why isn't [person : adam sandler] funny"
+  },
+  {
+    "text": "what store is having sales [date : tomorrow]"
+  },
+  {
+    "text": "how long do you cook a fifteen pound [food_type : turkey]"
+  },
+  {
+    "text": "why does [person : sofia vergara] look so young"
+  },
+  {
+    "text": "book me a [transport_type : train] ticket"
+  },
+  {
+    "text": "tell me some [place_name : best tourist places] to visit in [place_name : america]"
+  },
+  {
+    "text": "did i receive any new email from [person : robert]"
+  },
+  {
+    "text": "what are the coordinates of [place_name : the equator]"
+  },
+  {
+    "text": "i want to eat some [food_type : spicy] thing"
+  },
+  {
+    "text": "keep me up to date with the [place_name : world] news"
+  },
+  {
+    "text": "anything good happening [date : this weekend] in the area"
+  },
+  {
+    "text": "make an order for [food_type : noodles] one pack make it as takeaway order"
+  },
+  {
+    "text": "what reminders do i have scheduled before noon [date : tomorrow]"
+  },
+  {
+    "text": "what time is it on the east coast of the [place_name : united states]"
+  },
+  {
+    "text": "where is [place_name : laos] located"
+  },
+  {
+    "text": "alexa i've got dollars for the month how much can i spend every day [date : this month]"
+  },
+  {
+    "text": "hey send email to [person : john]"
+  },
+  {
+    "text": "hey what is the weather like [date : today]"
+  },
+  {
+    "text": "add shopping to my calendar for [date : tomorrow]"
+  },
+  {
+    "text": "report weather for [place_name : largo]"
+  },
+  {
+    "text": "could you please email [person : john] saying i'm on leave"
+  },
+  {
+    "text": "i need to set reminder on [date : fifteenth march]"
+  },
+  {
+    "text": "add [date : tomorrows] dinner date to the calendar"
+  },
+  {
+    "text": "find [person : john smith] in contacts"
+  },
+  {
+    "text": "i want to make a note on my calendar for the event [date : tomorrow] at [place_name : the library]"
+  },
+  {
+    "text": "please check the weather in [place_name : kansas]"
+  },
+  {
+    "text": "what is the date next [date : wednesday]"
+  },
+  {
+    "text": "how to cook [food_type : spaghetti squash]"
+  },
+  {
+    "text": "send a [media_type : twitter] complaint"
+  },
+  {
+    "text": "will i need to carry around a brolly [date : today]"
+  },
+  {
+    "text": "i want it to be able to tell me statistics about things it's done for me like how often i've eaten out [date : this month]"
+  },
+  {
+    "text": "what's the latest news from [media_type : xinhua]"
+  },
+  {
+    "text": "tell me [place_name : international] news"
+  },
+  {
+    "text": "is the [place_name : city] cheaper or costlier to live"
+  },
+  {
+    "text": "what is the time in [place_name : chicago]"
+  },
+  {
+    "text": "should i [weather_descriptor : open the sun roof]"
+  },
+  {
+    "text": "do i have any new emails from [person : kellogg]"
+  },
+  {
+    "text": "i need a recipe of [food_type : veg pulav]"
+  },
+  {
+    "text": "what is the temperature in [place_name : indianapolis indiana]"
+  },
+  {
+    "text": "ask for the weather [date : today] evening"
+  },
+  {
+    "text": "what is the best way to cook [food_type : pasta al dente]"
+  },
+  {
+    "text": "does [person : pink] have a new baby"
+  },
+  {
+    "text": "tell me what i wore [date : yesterday]"
+  },
+  {
+    "text": "play me a random [media_type : audio book] that has to do with love"
+  },
+  {
+    "text": "how long does it take to make [food_type : vegetable lasagna]"
+  },
+  {
+    "text": "will there any events [place_name : downtown] [date : this weekend]"
+  },
+  {
+    "text": "please say to the email that sent me [person : george] i need the money now it's urgent"
+  },
+  {
+    "text": "send email to [person : jessica]"
+  },
+  {
+    "text": "reply thank you to [person : john]"
+  },
+  {
+    "text": "is it going to [weather_descriptor : rain] on [date : monday]"
+  },
+  {
+    "text": "what is the quickest way to my work [place_name : downtown] without hitting any traffic"
+  },
+  {
+    "text": "do i need a [weather_descriptor : jacket]"
+  },
+  {
+    "text": "when was the [place_name : bolshoi theater] constructed"
+  },
+  {
+    "text": "olly i need directions to [place_name : madison street]"
+  },
+  {
+    "text": "what is [person : elvis] favorite ride"
+  },
+  {
+    "text": "reply to [person : johns] email"
+  },
+  {
+    "text": "i want to know [date : today's] weather"
+  },
+  {
+    "text": "how many of my contacts live or work in [place_name : detroit]"
+  },
+  {
+    "text": "should i bring an [weather_descriptor : umbrella] [date : tomorrow]"
+  },
+  {
+    "text": "i helped a poor needy [date : today] olly"
+  },
+  {
+    "text": "will it be [weather_descriptor : rainy] day [date : tomorrow]"
+  },
+  {
+    "text": "post i am happy to [media_type : facebook]"
+  },
+  {
+    "text": "what is the weather this [date : friday]"
+  },
+  {
+    "text": "add [person : bob] to my list of contacts"
+  },
+  {
+    "text": "what's going on in the [place_name : world] these days"
+  },
+  {
+    "text": "what [weather_descriptor : jacket] should i wear"
+  },
+  {
+    "text": "[transport_type : train] ticket"
+  },
+  {
+    "text": "let's cook [food_type : meatballs] together"
+  },
+  {
+    "text": "when i came back from [place_name : this place]"
+  },
+  {
+    "text": "what's [food_type : shakin bacon]"
+  },
+  {
+    "text": "order [food_type : pizza] for delivery"
+  },
+  {
+    "text": "is it [weather_descriptor : cold] outside"
+  },
+  {
+    "text": "give me the [transport_type : train] time"
+  },
+  {
+    "text": "check my email for any new email from [person : joe]"
+  },
+  {
+    "text": "where did [person : mahatma gandhi] born"
+  },
+  {
+    "text": "how do i get to [place_name : the mall]"
+  },
+  {
+    "text": "send a complaint [media_type : tweet]"
+  },
+  {
+    "text": "let me know the recipe for preparing [food_type : pasta]"
+  },
+  {
+    "text": "tell me what's going on with [media_type : facebook]"
+  },
+  {
+    "text": "ok google where does [person : sophia vergara] live"
+  },
+  {
+    "text": "what's happening around the [place_name : world]"
+  },
+  {
+    "text": "tell me my options for a [transport_type : train] to [place_name : los angles] next [date : wednesday] or [date : thursday]"
+  },
+  {
+    "text": "give me the list of available [transport_type : train] tickets from [place_name : edinburgh] to [place_name : leeds]"
+  },
+  {
+    "text": "display recent email from [person : john]"
+  },
+  {
+    "text": "current time in [place_name : japan]"
+  },
+  {
+    "text": "hey what will be the predicted weather for [date : tomorrow]"
+  },
+  {
+    "text": "where [person : jackie chan] currently live"
+  },
+  {
+    "text": "call me a [transport_type : taxi] olly"
+  },
+  {
+    "text": "what day of the week does the [date : fifteenth of march] fall on"
+  },
+  {
+    "text": "do i have any new emails in my inbox [date : today]"
+  },
+  {
+    "text": "i wish to know the weather in [place_name : san fransico]"
+  },
+  {
+    "text": "when was the [place_name : us] got freedom"
+  },
+  {
+    "text": "show me the latest news from the [media_type : guardian]"
+  },
+  {
+    "text": "what is the latest news on [person : donald trump]"
+  },
+  {
+    "text": "hows [weather_descriptor : mysore climate] [date : today]"
+  },
+  {
+    "text": "what movie can i watch tonight on the theater here in [place_name : boston]"
+  },
+  {
+    "text": "[date : august fifteenth] is what day of the week"
+  },
+  {
+    "text": "did [person : charlotte] responded"
+  },
+  {
+    "text": "when is the next time it will [weather_descriptor : rain]"
+  },
+  {
+    "text": "please book me a [transport_type : taxi] uber"
+  },
+  {
+    "text": "is [food_type : soft cheese] better than hard"
+  },
+  {
+    "text": "send an email to [person : peter] and ask him how is he now can i do something to help him"
+  },
+  {
+    "text": "what can i do in [place_name : berlin]"
+  },
+  {
+    "text": "please note i like jazz and hate [place_name : disco]"
+  },
+  {
+    "text": "olly i am taking day off [date : tomorrow]"
+  },
+  {
+    "text": "reply an email to [person : jason] that i will not come tonight"
+  },
+  {
+    "text": "what is new news for [date : today]"
+  },
+  {
+    "text": "how many hours distance is between my location and [place_name : new york]"
+  },
+  {
+    "text": "how do i make a [food_type : pizza]"
+  },
+  {
+    "text": "what alarms did i set [date : today]"
+  },
+  {
+    "text": "set a reminder for [date : two days] prior of the event"
+  },
+  {
+    "text": "what time does the first [transport_type : metrolink] arrive in the morning"
+  },
+  {
+    "text": "are their any new emails for me [date : today]"
+  },
+  {
+    "text": "the weather was bad [date : today]"
+  },
+  {
+    "text": "what is the weather going to be like on [date : march twentieth two thousand and seventeen]"
+  },
+  {
+    "text": "send an email to [person : rohit] saying i am busy tomorrow"
+  },
+  {
+    "text": "can you tell me about animal kingdom in [place_name : amazon forest]"
+  },
+  {
+    "text": "post a new status on [media_type : facebook] saying that i am enjoying the [weather_descriptor : nice weather]"
+  },
+  {
+    "text": "what movies are showing in cinema [date : today]"
+  },
+  {
+    "text": "will it be [weather_descriptor : rainy] [date : tomorrow]"
+  },
+  {
+    "text": "[date : today] i searched all over for my phone and couldn't find it"
+  },
+  {
+    "text": "what kind of weather are they having in [place_name : orange tx] right now"
+  },
+  {
+    "text": "what do i have to do [date : this week]"
+  },
+  {
+    "text": "please tell me how to i bake twelve [food_type : oatmeal cookies]"
+  },
+  {
+    "text": "check mail for anything from [person : shelly]"
+  },
+  {
+    "text": "what is the weather going to be like [date : today] in [place_name : tucson]"
+  },
+  {
+    "text": "what are the news stories on the [media_type : c. n. n.] website"
+  },
+  {
+    "text": "will the weather be [weather_descriptor : less than ten degree] in [place_name : paris]"
+  },
+  {
+    "text": "give me my [media_type : facebook] update every three hours"
+  },
+  {
+    "text": "[media_type : tweet] that there was an insect in the chocolate packet"
+  },
+  {
+    "text": "tell me current time in [place_name : los angels]"
+  },
+  {
+    "text": "calendar event send invite [person : bill malinda]"
+  },
+  {
+    "text": "did i get new emails from [person : sarah]"
+  },
+  {
+    "text": "order a [transport_type : train] ticket to [place_name : boston]"
+  },
+  {
+    "text": "tell me where [person : steve jobs] was born"
+  },
+  {
+    "text": "when does the next [transport_type : train] traveling the city leave here"
+  },
+  {
+    "text": "please send the email to [person : jeff]"
+  },
+  {
+    "text": "will it [weather_descriptor : rain] [date : this week]"
+  },
+  {
+    "text": "what time is it in [place_name : a city]"
+  },
+  {
+    "text": "what are the headlines on [media_type : c. n. n.]"
+  },
+  {
+    "text": "clear my calendar for [date : saturday]"
+  },
+  {
+    "text": "tell me how are the results of assembly elections in [place_name : delhi] going to come out"
+  },
+  {
+    "text": "what is [person : robin williams] birthday"
+  },
+  {
+    "text": "answer to [person : pawel's] email"
+  },
+  {
+    "text": "what is the news from that [media_type : newsource]"
+  },
+  {
+    "text": "what is going on on [date : december fourth]"
+  },
+  {
+    "text": "do i have a date on [date : friday]"
+  },
+  {
+    "text": "where is [place_name : fiji]"
+  },
+  {
+    "text": "is [person : steph curry] married"
+  },
+  {
+    "text": "please resume my [media_type : audiobook]"
+  },
+  {
+    "text": "anything interesting from [media_type : bob's news]"
+  },
+  {
+    "text": "what's the capital of [place_name : kazakhstan]"
+  },
+  {
+    "text": "do you have the [transport_type : train] times for [place_name : beaumont tx]"
+  },
+  {
+    "text": "[media_type : tweet] something for me"
+  },
+  {
+    "text": "keep reading the [media_type : audiobook] to me"
+  },
+  {
+    "text": "are there any forecasts of [weather_descriptor : rain or snow] [date : this week]"
+  },
+  {
+    "text": "pull up [person : kate's] email and write that i will let her know"
+  },
+  {
+    "text": "how many new emails have i received [date : today]"
+  },
+  {
+    "text": "what is [person : arnold schwarzenegger's] birthday"
+  },
+  {
+    "text": "could you order [food_type : sushi] for tonight dinner"
+  },
+  {
+    "text": "check for me new emails received from [person : sara]"
+  },
+  {
+    "text": "please book a ticket of rajdhani express [transport_type : train] from [place_name : jaipur]"
+  },
+  {
+    "text": "how is the weather in [place_name : san francisco]"
+  },
+  {
+    "text": "call city [transport_type : cab] to [place_name : airport]"
+  },
+  {
+    "text": "start and email to [person : john smith]"
+  },
+  {
+    "text": "any cultural events in [place_name : california]"
+  },
+  {
+    "text": "what's [person : leon's] email"
+  },
+  {
+    "text": "what is going on in the world [date : today]"
+  },
+  {
+    "text": "clear everything off my calendar for the [date : rest of the year]"
+  },
+  {
+    "text": "check emails from [person : john]"
+  },
+  {
+    "text": "explain the geographical location of [place_name : india]"
+  },
+  {
+    "text": "what's the weather like right now in [place_name : new york]"
+  },
+  {
+    "text": "book [transport_type : train] best deal"
+  },
+  {
+    "text": "olly do i have an alarm set for [date : tomorrow]"
+  },
+  {
+    "text": "when will my [food_type : chinese] food be delivered"
+  },
+  {
+    "text": "where was president [person : madison] born"
+  },
+  {
+    "text": "what is the time in [place_name : china]"
+  },
+  {
+    "text": "will [person : trump] visit [place_name : russia] anytime soon"
+  },
+  {
+    "text": "tell me about [date : this week's] weather"
+  },
+  {
+    "text": "what's a movie in [place_name : theaters] that doesn't suck"
+  },
+  {
+    "text": "when is the next [date : friday the thirteenth]"
+  },
+  {
+    "text": "will it [weather_descriptor : snow] [date : tomorrow] at noon"
+  },
+  {
+    "text": "do you know how to cook [food_type : risotto]"
+  },
+  {
+    "text": "post my business on [media_type : twitter]"
+  },
+  {
+    "text": "where did [person : amal clooney] go to college"
+  },
+  {
+    "text": "where was [person : steve jobs] born"
+  },
+  {
+    "text": "text an email to [person : donna] hey what are you doing [date : today]"
+  },
+  {
+    "text": "find [person : naty] from my contacts and send her an email"
+  },
+  {
+    "text": "check the [food_type : dish] price and all"
+  },
+  {
+    "text": "book a ticket to [place_name : ny] by [transport_type : train]"
+  },
+  {
+    "text": "what is the hobby of [person : ajay devgn]"
+  },
+  {
+    "text": "read me the latest [media_type : new york times] headlines"
+  },
+  {
+    "text": "time difference between [place_name : u. k.] and [place_name : us]"
+  },
+  {
+    "text": "how is [food_type : rice] prepared"
+  },
+  {
+    "text": "what is the least tornado prone state in the entire [place_name : us]"
+  },
+  {
+    "text": "what's the latest news on [media_type : c. n. n.]"
+  },
+  {
+    "text": "how old is [person : marian carey]"
+  },
+  {
+    "text": "show [media_type : b. b. c.] news of migration"
+  },
+  {
+    "text": "please continue reading [media_type : audiobook]"
+  },
+  {
+    "text": "cancel the breakfast at [place_name : tiffany's house]"
+  },
+  {
+    "text": "i would like to reply to [person : sarah's] email"
+  },
+  {
+    "text": "directions to [place_name : disney land]"
+  },
+  {
+    "text": "how much is a round trip [transport_type : train] ticket to go to [place_name : new york]"
+  },
+  {
+    "text": "can i wear my [weather_descriptor : sandals] [date : today]"
+  },
+  {
+    "text": "time between [place_name : us] and [place_name : canada]"
+  },
+  {
+    "text": "can you tell me the recipe to cook [food_type : pav bhaji]"
+  },
+  {
+    "text": "[food_type : noodles] one pack make it as takeaway"
+  },
+  {
+    "text": "what's the currency exchange rate for [place_name : china]"
+  },
+  {
+    "text": "[media_type : tweet] to google costumer service my new nexus phone stop working help please"
+  },
+  {
+    "text": "when is the next [transport_type : train] to [place_name : glasgow] from [place_name : aberdeen]"
+  },
+  {
+    "text": "are [weather_descriptor : sunglasses] a good choice for [date : today]"
+  },
+  {
+    "text": "post this video to [media_type : facebook]"
+  },
+  {
+    "text": "can you tell me the times the [transport_type : train] leaves for [place_name : chicago]"
+  },
+  {
+    "text": "has [person : jane doe] emailed me"
+  },
+  {
+    "text": "what is the menu [date : today] add some [food_type : boiled vegetables] also to it"
+  },
+  {
+    "text": "please give me the winning lottery numbers for [date : this weekend]"
+  },
+  {
+    "text": "alexa remove dinner with [person : mike] from my calendar"
+  },
+  {
+    "text": "i need you to mark next [date : monday]"
+  },
+  {
+    "text": "has [person : robert] emails me yet"
+  },
+  {
+    "text": "check my [media_type : social networks]"
+  },
+  {
+    "text": "do you know [person : jessica snout's] phone number"
+  },
+  {
+    "text": "hey what time is it in [place_name : london] now"
+  },
+  {
+    "text": "what's the weather next [date : wednesday]"
+  },
+  {
+    "text": "can you book an uber [date : tomorrow]"
+  },
+  {
+    "text": "baking times for [food_type : chicken] in the oven"
+  },
+  {
+    "text": "should i take a [weather_descriptor : sweater] or a [weather_descriptor : coat] to work [date : today]"
+  },
+  {
+    "text": "[media_type : c. n. n.] headlines"
+  },
+  {
+    "text": "can you please book [transport_type : train] tickets for two for this [date : friday]"
+  },
+  {
+    "text": "find information on [date : today's] stocks"
+  },
+  {
+    "text": "how many plays has [person : patrick stewart] been in"
+  },
+  {
+    "text": "get me the local [transport_type : train] timing to destination [place_name : cstm]"
+  },
+  {
+    "text": "please play the latest [person : bill simmons] podcast"
+  },
+  {
+    "text": "how [weather_descriptor : hot] is it in [place_name : quebec]"
+  },
+  {
+    "text": "show me [date : tomorrows] weather in [place_name : this area]"
+  },
+  {
+    "text": "hey i am having a bad day [date : today] what can i watch to cheer me up"
+  },
+  {
+    "text": "what is the time in [place_name : beijing]"
+  },
+  {
+    "text": "what is [date : todays] weather"
+  },
+  {
+    "text": "what are the top stories on [media_type : c. n. n.]"
+  },
+  {
+    "text": "are [weather_descriptor : storms] likely [date : today]"
+  },
+  {
+    "text": "how far is [place_name : california] from [place_name : georgia]"
+  },
+  {
+    "text": "[date : today] is which date"
+  },
+  {
+    "text": "give me the latest political headlines across the [place_name : world]"
+  },
+  {
+    "text": "tell me about the cheapest flight fares to [place_name : nj] [date : today]"
+  },
+  {
+    "text": "please send a mail to my friend [person : divya] how are you"
+  },
+  {
+    "text": "what's my [date : upcoming week] look like"
+  },
+  {
+    "text": "please check the trending topics on [media_type : twitter]"
+  },
+  {
+    "text": "read some more of the daisy goodwin [media_type : book] for me"
+  },
+  {
+    "text": "show me events in [place_name : sacramento]"
+  },
+  {
+    "text": "do not wake me up [date : tomorrow]"
+  },
+  {
+    "text": "how many [date : saturdays are in march]"
+  },
+  {
+    "text": "how do i get [place_name : home] from here"
+  },
+  {
+    "text": "i would like a [food_type : cheeseburger]"
+  },
+  {
+    "text": "info on [person : lisa ann] please"
+  },
+  {
+    "text": "show me my meetings [date : this friday]"
+  },
+  {
+    "text": "are there any events going on [place_name : downtown] tonight"
+  },
+  {
+    "text": "can you upload my latest selfie in my [media_type : facebook account]"
+  },
+  {
+    "text": "do you know recipe for [food_type : risotto]"
+  },
+  {
+    "text": "what [weather_descriptor : degree] is it outside"
+  },
+  {
+    "text": "what time is it in [place_name : new york city]"
+  },
+  {
+    "text": "show me my calendar event [date : this friday] afternoon"
+  },
+  {
+    "text": "is the weather going to be [weather_descriptor : nice] [date : this weekend]"
+  },
+  {
+    "text": "which bar has the most affordable drinks near [place_name : sixth street]"
+  },
+  {
+    "text": "how many tornadoes have there been [date : this month]"
+  },
+  {
+    "text": "tell me the [transport_type : train] arrival time to [place_name : new york]"
+  },
+  {
+    "text": "how is it outside [date : today]"
+  },
+  {
+    "text": "list of famous [food_type : biryani] recipes"
+  },
+  {
+    "text": "travel book a [transport_type : train] ticket"
+  },
+  {
+    "text": "give the list of theaters in the [place_name : vicinity]"
+  },
+  {
+    "text": "tell me all the current events in my [place_name : hometown]"
+  },
+  {
+    "text": "any new email from [person : john]"
+  },
+  {
+    "text": "[media_type : tweet] that product sucks"
+  },
+  {
+    "text": "info on [date : this week] weather"
+  },
+  {
+    "text": "what is the current [weather_descriptor : temperature] outside"
+  },
+  {
+    "text": "find a [transport_type : taxi] to book"
+  },
+  {
+    "text": "what shops are [place_name : within ten miles]"
+  },
+  {
+    "text": "will i need an [weather_descriptor : umbrella] [date : today]"
+  },
+  {
+    "text": "do i need [weather_descriptor : umbrella] for night"
+  },
+  {
+    "text": "what are the [media_type : b. b. c. poll] predictions for the upcoming us elections"
+  },
+  {
+    "text": "send an email to [person : jake] to tell him thank you"
+  },
+  {
+    "text": "my friend [person : john] has sent me a invitation card to his newly bought home say thanks to him in his mail id"
+  },
+  {
+    "text": "what year did [person : george clooney] start acting"
+  },
+  {
+    "text": "how [weather_descriptor : cold] is it outside [date : today]"
+  },
+  {
+    "text": "olly what time is it in [place_name : this city]"
+  },
+  {
+    "text": "list all [transport_type : train] times to [place_name : ny]"
+  },
+  {
+    "text": "search for [media_type : podcasts] that cover men's issues"
+  },
+  {
+    "text": "how do i book a [transport_type : train] ticket online"
+  },
+  {
+    "text": "did i receive any new emails from [person : dan]"
+  },
+  {
+    "text": "tell me about [place_name : jaipur]"
+  },
+  {
+    "text": "look up the number of people living in [place_name : miami florida]"
+  },
+  {
+    "text": "olly how long should i boil the [food_type : eggs]"
+  },
+  {
+    "text": "how to make [food_type : taco]"
+  },
+  {
+    "text": "play my favorite song from [date : last year]"
+  },
+  {
+    "text": "is [person : angeline] having a new movie this year"
+  },
+  {
+    "text": "play [person : duncan trussel's] latest podcast"
+  },
+  {
+    "text": "current time in [place_name : cpt]"
+  },
+  {
+    "text": "tell me [date : today's] date"
+  },
+  {
+    "text": "how do i reach [person : sarah]"
+  },
+  {
+    "text": "how do i get to the [place_name : train station] for a ticket"
+  },
+  {
+    "text": "[media_type : tweet] mcdonald's down reseda has terrible service"
+  },
+  {
+    "text": "olly what is the capital of [place_name : california]"
+  },
+  {
+    "text": "what is the minimum [weather_descriptor : temperature] of [place_name : london]"
+  },
+  {
+    "text": "go to the [media_type : washington post] website"
+  },
+  {
+    "text": "did i email [person : tom] on the subject of gun control"
+  },
+  {
+    "text": "what brand hair spray does [person : donald trump] use"
+  },
+  {
+    "text": "set a repeating reminder alarm for the [media_type : facebook] event i have to attend on [date : seventh april]"
+  },
+  {
+    "text": "what do i have planned for [date : this week]"
+  },
+  {
+    "text": "will i need my [weather_descriptor : snow boots] this afternoon"
+  },
+  {
+    "text": "hey robot give me a list of ingredients for [food_type : welsh rarebit]"
+  },
+  {
+    "text": "who won the presidential election [date : this year]"
+  },
+  {
+    "text": "what is the time in [place_name : another city]"
+  },
+  {
+    "text": "what events are upcoming [date : today]"
+  },
+  {
+    "text": "i need to know how to make [food_type : stuffed peppers]"
+  },
+  {
+    "text": "what is the current weather condition in [place_name : my place]"
+  },
+  {
+    "text": "when is the next [transport_type : train] leaving for [place_name : austin]"
+  },
+  {
+    "text": "set feeling happy status on [media_type : facebook]"
+  },
+  {
+    "text": "tell me what's happening on [media_type : instagram]"
+  },
+  {
+    "text": "i need a ride [place_name : home]"
+  },
+  {
+    "text": "how old is [person : j. k. rowling]"
+  },
+  {
+    "text": "what was [person : george eliot's] first november el"
+  },
+  {
+    "text": "is it [date : twentieth march today]"
+  },
+  {
+    "text": "are there any fun events in [place_name : la] [date : today]"
+  },
+  {
+    "text": "tell me the weather [date : this week]"
+  },
+  {
+    "text": "just add a new email in my contacts from [person : michael]"
+  },
+  {
+    "text": "respond to the email from [person : john doe]"
+  },
+  {
+    "text": "what does my schedule look like [date : today]"
+  },
+  {
+    "text": "open [media_type : audiobook]"
+  },
+  {
+    "text": "what are the upcoming concerts in [place_name : dallas]"
+  },
+  {
+    "text": "lets send a [media_type : tweet]"
+  },
+  {
+    "text": "how [weather_descriptor : cold] is [date : today]"
+  },
+  {
+    "text": "i am going to work [date : today]"
+  },
+  {
+    "text": "book me a [transport_type : cab] going to location"
+  },
+  {
+    "text": "remove the alarm for [date : tomorrow]"
+  },
+  {
+    "text": "when does the f. [transport_type : train] run [date : today]"
+  },
+  {
+    "text": "please give me information about [person : john abraham lincon]"
+  },
+  {
+    "text": "can you write an email to [person : chelsea]"
+  },
+  {
+    "text": "should i wear [weather_descriptor : sandals or shoes with socks]"
+  },
+  {
+    "text": "do i need to do anything [date : today]"
+  },
+  {
+    "text": "what news has happened on [media_type : c. n. n.] [date : today]"
+  },
+  {
+    "text": "who is the prime minister of [place_name : russia]"
+  },
+  {
+    "text": "i'd like to set a date for [date : this week]"
+  },
+  {
+    "text": "did [person : ben's] email have an attachment"
+  },
+  {
+    "text": "what ingredients do i need to bake a large [food_type : cake]"
+  },
+  {
+    "text": "what does [person : priyanka chopra] do to look beautiful"
+  },
+  {
+    "text": "olly how many meetings did [person : mahatma gandhi] undertake"
+  },
+  {
+    "text": "what time does the [transport_type : train] arrive in [place_name : sacremento]"
+  },
+  {
+    "text": "delete my dinner [date : tomorrow]"
+  },
+  {
+    "text": "will the [weather_descriptor : temperature] be [weather_descriptor : higher than forty] [date : tomorrow]"
+  },
+  {
+    "text": "email [person : donna] plans for [date : today]"
+  },
+  {
+    "text": "tell me the info about [place_name : india's] geography"
+  },
+  {
+    "text": "the event will include [person : walter] and [person : gemma]"
+  },
+  {
+    "text": "what time are the trains going to [place_name : chennai] leaving"
+  },
+  {
+    "text": "olly how many tornadoes have there been [date : this month]"
+  },
+  {
+    "text": "set notification from [media_type : world news]"
+  },
+  {
+    "text": "what are the trending articles on the [media_type : new york times]"
+  },
+  {
+    "text": "get rid of all events with [person : jeff]"
+  },
+  {
+    "text": "will i need to wear a [weather_descriptor : jacket] next [date : wednesday]"
+  },
+  {
+    "text": "how's the weather like in [place_name : new jersey]"
+  },
+  {
+    "text": "what is the largest active volcano on [place_name : earth]"
+  },
+  {
+    "text": "what was the first movie of [person : morgan freeman]"
+  },
+  {
+    "text": "will there be a fall in [weather_descriptor : temperature] by tonight"
+  },
+  {
+    "text": "do i need a [weather_descriptor : sweater] [date : today]"
+  },
+  {
+    "text": "anything new on [media_type : insta]"
+  },
+  {
+    "text": "is it [date : wednesday]"
+  },
+  {
+    "text": "do you think i should go to the [place_name : theater] [date : today]"
+  },
+  {
+    "text": "have i need to take a [weather_descriptor : sun glass]"
+  },
+  {
+    "text": "how much is [person : lebron james] worth"
+  },
+  {
+    "text": "[media_type : tweet] complaint to at"
+  },
+  {
+    "text": "set a reminder for the [date : thirteenth] that i have a lunch with dale"
+  },
+  {
+    "text": "show me direction to my [place_name : home]"
+  },
+  {
+    "text": "what date is it [date : today]"
+  },
+  {
+    "text": "what is on my to do list [date : today]"
+  },
+  {
+    "text": "display [weather_descriptor : the seven day forecast] for [date : this week]"
+  },
+  {
+    "text": "siri open [media_type : twitter] tweet at potus sucks"
+  },
+  {
+    "text": "is it [date : friday]"
+  },
+  {
+    "text": "what should i watch [date : today]"
+  },
+  {
+    "text": "how's the weather in [place_name : the capital city]"
+  },
+  {
+    "text": "news from [media_type : c. n. n.]"
+  },
+  {
+    "text": "schedule [transport_type : taxi] pickup for [date : monday] at noon"
+  },
+  {
+    "text": "when is the birth date of [person : taylor lautner]"
+  },
+  {
+    "text": "how's the weather [date : today]"
+  },
+  {
+    "text": "what day of the week is [date : the twenty third of this month]"
+  },
+  {
+    "text": "driving time to [place_name : los angeles]"
+  },
+  {
+    "text": "what is a good iranian film from [date : two thousand and sixteen]"
+  },
+  {
+    "text": "tell me the percentage of the chance of [weather_descriptor : rain] in [place_name : seattle washington] for [date : today]"
+  },
+  {
+    "text": "olly hit me up with some exciting events in the [place_name : bay area]"
+  },
+  {
+    "text": "what's the weather like [date : tomorrow]"
+  },
+  {
+    "text": "what day of the week was [date : december four one thousand nine hundred and eighty two]"
+  },
+  {
+    "text": "how much money did [person : bill gates] make"
+  },
+  {
+    "text": "show me the [transport_type : train] schedules to the [place_name : metropolitan opera house]"
+  },
+  {
+    "text": "how long should i boil the [food_type : egg]"
+  },
+  {
+    "text": "tell me [date : today's] direction"
+  },
+  {
+    "text": "what is the weather in [place_name : beijing]"
+  },
+  {
+    "text": "how tall is mount [place_name : everest]"
+  },
+  {
+    "text": "the news from [media_type : c. b. s.] alexa"
+  },
+  {
+    "text": "has [person : ben] got in touch"
+  },
+  {
+    "text": "can you tell me about [person : wayne gretszky]"
+  },
+  {
+    "text": "what's my schedule [date : today]"
+  },
+  {
+    "text": "what's for [date : today]"
+  },
+  {
+    "text": "where does [person : sophia vergara] live"
+  },
+  {
+    "text": "get [date : todays] climate forecast here"
+  },
+  {
+    "text": "what's the latest news from [media_type : c. n. n.] please"
+  },
+  {
+    "text": "keep me up to date with [date : today's] n. b. a. scores"
+  },
+  {
+    "text": "give me news from [media_type : c. n. n.]"
+  },
+  {
+    "text": "what day is new year's eve [date : this year]"
+  },
+  {
+    "text": "please remind me about this [date : tomorrow]"
+  },
+  {
+    "text": "what's the weather in [place_name : portland]"
+  },
+  {
+    "text": "how much is a [transport_type : train] ticket to [place_name : chicago]"
+  },
+  {
+    "text": "when's [person : mark lanegan's] next album out"
+  },
+  {
+    "text": "book me a [transport_type : train] ticket to [place_name : barcelona] please"
+  },
+  {
+    "text": "how many [food_type : eggs] do i need for an [food_type : omelet]"
+  },
+  {
+    "text": "compose a new email to [person : ray]"
+  },
+  {
+    "text": "ticket for [place_name : delhi]"
+  },
+  {
+    "text": "get me latest updates from [media_type : facebook]"
+  },
+  {
+    "text": "compose an email to [person : bob]"
+  },
+  {
+    "text": "shall i change my car tires to [weather_descriptor : snow tires] soon"
+  },
+  {
+    "text": "tell me something i can do to help my community [date : today]"
+  },
+  {
+    "text": "order a twelve piece [food_type : honey mustard wing combo] with seasonimg altnon the fries and a sprite as the drink"
+  },
+  {
+    "text": "will it be [weather_descriptor : raining] on [date : thursday]"
+  },
+  {
+    "text": "[media_type : facebook]"
+  },
+  {
+    "text": "what is the birthday of [person : hemingway]"
+  },
+  {
+    "text": "what is the forecast for the [date : week]"
+  },
+  {
+    "text": "please find a contact number of [person : jayesh] and tell me"
+  },
+  {
+    "text": "tell me what the weather is doing in [place_name : grand rapids mi] right now"
+  },
+  {
+    "text": "tell me how to make a [food_type : poor boy sandwich]"
+  },
+  {
+    "text": "am i going to be able to [weather_descriptor : mow the grass] this evening"
+  },
+  {
+    "text": "[weather_descriptor : mild] or [weather_descriptor : heavy] weather"
+  },
+  {
+    "text": "tell me when [person : obama] was born"
+  },
+  {
+    "text": "what's the time in [place_name : australia]"
+  },
+  {
+    "text": "my trip to goa photo post it on [media_type : instagram]"
+  },
+  {
+    "text": "[media_type : tweet] my current location"
+  },
+  {
+    "text": "show me the best recipe for [food_type : spaghetti]"
+  },
+  {
+    "text": "please load new email for [person : bruce] and send message now"
+  },
+  {
+    "text": "give me [person : petey's] telephone number"
+  },
+  {
+    "text": "what day is the [date : fifth]"
+  },
+  {
+    "text": "explain how is [place_name : u. s. a.] better than other countries"
+  },
+  {
+    "text": "what does [person : obama] do in his day to day life"
+  },
+  {
+    "text": "book a [transport_type : cab] to [place_name : office] for me"
+  },
+  {
+    "text": "uber me to the [place_name : airport]"
+  },
+  {
+    "text": "notify me when [person : joshua] emails me"
+  },
+  {
+    "text": "should i bring a [weather_descriptor : jacket] with me tonight"
+  },
+  {
+    "text": "what's sensational in [media_type : time of india]"
+  },
+  {
+    "text": "open [media_type : gallery] post picture name"
+  },
+  {
+    "text": "plan for [date : tomorrow]"
+  },
+  {
+    "text": "what is the news [date : today]"
+  },
+  {
+    "text": "i want to know what supermarket near me has the best price on [food_type : gluten free bread]"
+  },
+  {
+    "text": "delete my to do's for [date : this week]"
+  },
+  {
+    "text": "play me [person : john's] podcast"
+  },
+  {
+    "text": "could you tell me the time in [place_name : london]"
+  },
+  {
+    "text": "i will need [weather_descriptor : warm socks] in [weather_descriptor : winter] in morning"
+  },
+  {
+    "text": "what is the time in [place_name : canada] now"
+  },
+  {
+    "text": "date [date : today]"
+  },
+  {
+    "text": "does the weather call for [weather_descriptor : rain] [date : saturday]"
+  },
+  {
+    "text": "[place_name : africa] info"
+  },
+  {
+    "text": "did [person : angelina jolie] leave [person : brad pitt]"
+  },
+  {
+    "text": "[weather_descriptor : temperature] outside"
+  },
+  {
+    "text": "did i get an email from [person : paul]"
+  },
+  {
+    "text": "can you give me a recipe for homemade [food_type : chicken noodle soup]"
+  },
+  {
+    "text": "any events [date : this weekend] in [place_name : pondichery]"
+  },
+  {
+    "text": "is there a connecting [transport_type : train] from [place_name : london] to [place_name : paris] and what time"
+  },
+  {
+    "text": "any mail from [person : amazon] [date : today]"
+  },
+  {
+    "text": "remind me what i am doing on [date : sunday] afternoon"
+  },
+  {
+    "text": "what is the weather for [date : this week]"
+  },
+  {
+    "text": "which is the highest peak in the [place_name : world]"
+  },
+  {
+    "text": "show me reviews of my [place_name : nearest location] food court"
+  },
+  {
+    "text": "tell me about economy and g. d. p. about [place_name : india] versus [place_name : china]"
+  },
+  {
+    "text": "where [person : seth] lives"
+  },
+  {
+    "text": "siri [date : today] is what date"
+  },
+  {
+    "text": "look for shopping mall in [place_name : sacramento] for women's clothes"
+  },
+  {
+    "text": "weather in [place_name : paris]"
+  },
+  {
+    "text": "what events are going in my [place_name : town] [date : this week]"
+  },
+  {
+    "text": "ok google [media_type : tweet] what a jerk the owner is at the gas station"
+  },
+  {
+    "text": "tell me that list i wrote [date : two days] ago"
+  },
+  {
+    "text": "what is the capital of [place_name : nigeria]"
+  },
+  {
+    "text": "what is the time in [place_name : las vegas]"
+  },
+  {
+    "text": "show me the latest news from the [media_type : un]"
+  },
+  {
+    "text": "should i bring an umbrella [date : today]"
+  },
+  {
+    "text": "find me a [food_type : chocolate cake] recipe"
+  },
+  {
+    "text": "how long should i cook a [food_type : steak] to be medium"
+  },
+  {
+    "text": "should i take my [weather_descriptor : raincoat] with me now"
+  },
+  {
+    "text": "take me to [place_name : layfayette saint and canal]"
+  },
+  {
+    "text": "do i have any new email from [person : joe]"
+  },
+  {
+    "text": "contact detail of [person : paul]"
+  },
+  {
+    "text": "play [media_type : youtube] playlist blank"
+  },
+  {
+    "text": "it's time for [food_type : junk food]"
+  },
+  {
+    "text": "i need [date : next week's] lunch put on the calendar"
+  },
+  {
+    "text": "is it [weather_descriptor : raining] tonight"
+  },
+  {
+    "text": "what's happening in [place_name : france] [date : today]"
+  },
+  {
+    "text": "what do i need to make [food_type : lamb pathia]"
+  },
+  {
+    "text": "i need you to [media_type : tweet] a complaint"
+  },
+  {
+    "text": "tell me the [weather_descriptor : temperature]"
+  },
+  {
+    "text": "how the to do list for [date : today]"
+  },
+  {
+    "text": "will i need to shovel my [weather_descriptor : driveway] this morning"
+  },
+  {
+    "text": "who is doing [media_type : facebook live] right now"
+  },
+  {
+    "text": "how old is [person : mariah carey]"
+  },
+  {
+    "text": "play only all music released between the year [date : one thousand nine hundred and ninety] and [date : two thousand]"
+  },
+  {
+    "text": "add lowes hardware to my contact emails located in [place_name : cleveland ohio]"
+  },
+  {
+    "text": "please scan the am dial on the radio [date : right now]"
+  },
+  {
+    "text": "please search the internet and display the suitable [media_type : youtube videos] for cooking [food_type : italian] foods"
+  },
+  {
+    "text": "it is a [weather_descriptor : sunny] day [date : today] right"
+  },
+  {
+    "text": "what is the chance of [weather_descriptor : precipitation] in [date : todays] weather"
+  },
+  {
+    "text": "ticket for [place_name : bombay]"
+  },
+  {
+    "text": "i will require [weather_descriptor : full cover jacket] if it is [weather_descriptor : too stormy] in evening"
+  },
+  {
+    "text": "what is [date : today's] forecast for [place_name : berlin]"
+  },
+  {
+    "text": "train times from near me to [place_name : location]"
+  },
+  {
+    "text": "tell me about [place_name : city] traffic"
+  },
+  {
+    "text": "what is the top searches in google [date : today]"
+  },
+  {
+    "text": "what's the time in [place_name : sydney] now"
+  },
+  {
+    "text": "who is the current prime minister of [place_name : russia]"
+  },
+  {
+    "text": "what are the events [date : next week]"
+  },
+  {
+    "text": "give me the schedule for [date : today's] events"
+  },
+  {
+    "text": "what is the current time in [place_name : chennai]"
+  },
+  {
+    "text": "how is the weather likely to be [date : this week]"
+  },
+  {
+    "text": "will it be [weather_descriptor : nice] outside [date : this week]"
+  },
+  {
+    "text": "please book a [transport_type : train] ticket from [place_name : london] to [place_name : manchester]"
+  },
+  {
+    "text": "send an email to [person : margaret]"
+  },
+  {
+    "text": "will it [weather_descriptor : rain] now"
+  },
+  {
+    "text": "call the nearest [food_type : thai] restaurant with delivery"
+  },
+  {
+    "text": "current time [place_name : new york]"
+  }
+]
