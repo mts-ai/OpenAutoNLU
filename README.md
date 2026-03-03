@@ -233,6 +233,14 @@ result = pipeline.train()  # Test data generated automatically
 
 ### Method-Specific Overrides
 
+You can override default parameters for a specific training method by using the method class name as a key. Note that **overriding a method's defaults does not force the pipeline to use that method** — the pipeline always selects the method automatically based on the dataset. The overrides will only take effect if the pipeline selects that particular method.
+
+Available method keys:
+- Base methods: `SetFitMethod`, `AncSetFitMethod`, `Finetuner`, `TokenClassificationFinetuner`
+- OOD methods: `SetFitOOD`, `AncSetFitOOD`, `FinetunerWithOOD`
+
+All overridable parameters are defined in the corresponding config classes in `open_autonlu/methods/configs/`.
+
 ```python
 # SetFit configuration
 config_overrides = {
