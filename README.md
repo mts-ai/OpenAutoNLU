@@ -225,7 +225,7 @@ result = pipeline.train()  # Test data generated automatically
 ```python
 # SetFit configuration
 config_overrides = {
-    "SetFitMethodConfig": {
+    "SetFitMethod": {
         "num_iterations": 25,
         "body_lr": 2e-5,
         "batch_size": 16,
@@ -234,7 +234,7 @@ config_overrides = {
 
 # Finetuner configuration
 config_overrides = {
-    "FinetunerConfig": {
+    "Finetuner": {
         "num_hpo_trials": 15,  # Hyperparameter optimization trials
     }
 }
