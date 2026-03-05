@@ -1,3 +1,4 @@
+import warnings
 from dataclasses import dataclass
 from typing import Optional
 
@@ -34,7 +35,8 @@ class AncSetFitConfig(SetFitMethodConfig):
         epochs: Number of training epochs.
         body_lr: Learning rate for the sentence transformer body.
         template: Prompt template prepended to anc_label to form anchors.
-            If None, resolved from language by DEFAULT_TEMPLATE_BY_LANGUAGE.
+            If None, resolved from language by DEFAULT_TEMPLATE_BY_LANGUAGE (ru/en).
+            For other languages a custom template must be provided.
     """
 
     margin: float = 0.25
@@ -45,6 +47,22 @@ class AncSetFitConfig(SetFitMethodConfig):
     template: Optional[str] = None
 
     def __post_init__(self) -> None:
-        super().__post_init__()
         if self.template is None:
+            if self.language not in DEFAULT_TEMPLATE_BY_LANGUAGE:
+                raise ValueError(
+                    f"Language '{self.language}' requires a custom 'template'. "
+                    f"Default templates are only available for: "
+                    f"{', '.join(DEFAULT_TEMPLATE_BY_LANGUAGE)}. "
+                    f"Set 'template' in config_overrides when creating the pipeline."
+                )
             self.template = DEFAULT_TEMPLATE_BY_LANGUAGE[self.language]
+
+        super().__post_init__()
+
+        if self.template in DEFAULT_TEMPLATE_BY_LANGUAGE.values():
+            warnings.warn(
+                "Using the default AncSetFit template. "
+                "For best results, set a custom 'template' in config_overrides when creating the pipeline.",
+                UserWarning,
+                stacklevel=5,
+            )
