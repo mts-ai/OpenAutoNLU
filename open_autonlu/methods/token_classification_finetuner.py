@@ -5,6 +5,7 @@ from dataclasses import replace
 from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple, Union
 
 import numpy as np
+import torch
 from accelerate.utils import find_executable_batch_size
 from datasets import Dataset, DatasetDict
 from optimum.onnxruntime import ORTModelForTokenClassification
@@ -350,10 +351,16 @@ class TokenClassificationFinetunerBase(
         Returns a classification_report and a confusion_matrix
         """
         true_labels = dataset["labels"]
-        predictions = self.predict(dataset["text"], output_format=NERFormat.BIO)
-        pred_labels = []
-        for pred in predictions:
-            pred_labels.append(pred.labels)
+        pred_labels = find_executable_batch_size(
+            self._predict_from_tokens, starting_batch_size=BATCH_SIZE
+        )(dataset["tokens"])
+        aligned_true, aligned_pred = [], []
+        for t, p in zip(true_labels, pred_labels):
+            n = min(len(t), len(p))
+            aligned_true.append(t[:n])
+            aligned_pred.append(p[:n])
+        true_labels = aligned_true
+        pred_labels = aligned_pred
         clf_report, confusion_matrix = evaluate_entity_level(
             true_labels, pred_labels, self.entity_names
         )
@@ -435,6 +442,51 @@ class TokenClassificationFinetunerBase(
         return find_executable_batch_size(
             self._predict, starting_batch_size=batch_size
         )(texts, output_format=output_format)
+
+    def _predict_from_tokens(
+        self, batch_size: int, tokens_list: List[List[str]]
+    ) -> List[List[str]]:
+        """Run NER inference on pre-tokenized inputs (one BIO label per token).
+
+        Uses the same word-level tokenization as training (is_split_into_words=True),
+        so evaluation aligns with gold labels.
+        """
+
+        self.model.eval()
+        all_pred_labels: List[List[str]] = []
+        for start in range(0, len(tokens_list), batch_size):
+            batch_tokens = tokens_list[start : start + batch_size]
+            enc = self.tokenizer(
+                batch_tokens,
+                is_split_into_words=True,
+                truncation=True,
+                padding=True,
+                return_tensors="pt",
+            )
+            model_inputs = {
+                k: v.to(self.model.device) if hasattr(v, "to") else v
+                for k, v in enc.items()
+            }
+            with torch.no_grad():
+                out = self.model(**model_inputs)
+            logits = out.logits
+            pred_ids = logits.argmax(dim=-1).cpu().tolist()
+
+            for i in range(len(batch_tokens)):
+                try:
+                    word_ids = enc.word_ids(batch_index=i)
+                except TypeError:
+                    word_ids = enc.word_ids(i)
+                labels_i: List[str] = []
+                last_wid: Optional[int] = None
+                for j, wid in enumerate(word_ids):
+                    if wid is None:
+                        continue
+                    if wid != last_wid:
+                        labels_i.append(self.id2label[pred_ids[i][j]])
+                    last_wid = wid
+                all_pred_labels.append(labels_i)
+        return all_pred_labels
 
     def _predict(
         self,
