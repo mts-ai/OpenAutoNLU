@@ -17,6 +17,7 @@ _CJK_RANGES = (
 
 _TOKEN_RE = re.compile(r"\w+|\S", re.UNICODE)
 
+
 def _is_cjk(char: str) -> bool:
     cp = ord(char)
     return any(lo <= cp <= hi for lo, hi in _CJK_RANGES)
@@ -47,22 +48,26 @@ def tokenize_with_offsets(text: str) -> list[Token]:
             for i, ch in enumerate(word):
                 if _is_cjk(ch):
                     if buf_start is not None:
-                        raw.append(Token(
-                            start=offset + buf_start,
-                            stop=offset + i,
-                            text=word[buf_start:i],
-                        ))
+                        raw.append(
+                            Token(
+                                start=offset + buf_start,
+                                stop=offset + i,
+                                text=word[buf_start:i],
+                            )
+                        )
                         buf_start = None
                     raw.append(Token(start=offset + i, stop=offset + i + 1, text=ch))
                 else:
                     if buf_start is None:
                         buf_start = i
             if buf_start is not None:
-                raw.append(Token(
-                    start=offset + buf_start,
-                    stop=offset + len(word),
-                    text=word[buf_start:],
-                ))
+                raw.append(
+                    Token(
+                        start=offset + buf_start,
+                        stop=offset + len(word),
+                        text=word[buf_start:],
+                    )
+                )
         else:
             raw.append(Token(start=offset, stop=m.end(), text=word))
 
