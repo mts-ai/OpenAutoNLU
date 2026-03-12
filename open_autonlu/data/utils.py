@@ -15,7 +15,7 @@ _CJK_RANGES = (
     (0x2F800, 0x2FA1F),
 )
 
-_TOKEN_RE = re.compile(r"\w+|\S", re.UNICODE)
+_TOKEN_RE = re.compile(r"\w+(?:-\w+)*|\S", re.UNICODE)
 
 
 def _is_cjk(char: str) -> bool:
