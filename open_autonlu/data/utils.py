@@ -1,17 +1,29 @@
+import re
+import unicodedata
 from typing import NamedTuple
 
-import spacy
 from datasets import Dataset
 
-SUPPORTED_LANGUAGES = ("ru", "en")
+_CJK_RANGES = (
+    (0x4E00, 0x9FFF),
+    (0x3400, 0x4DBF),
+    (0x20000, 0x2A6DF),
+    (0x2A700, 0x2B73F),
+    (0x2B740, 0x2B81F),
+    (0x2B820, 0x2CEAF),
+    (0xF900, 0xFAFF),
+    (0x2F800, 0x2FA1F),
+)
 
-_spacy_models: dict[str, spacy.language.Language] = {}
+_TOKEN_RE = re.compile(r"\w+|\S", re.UNICODE)
+
+def _is_cjk(char: str) -> bool:
+    cp = ord(char)
+    return any(lo <= cp <= hi for lo, hi in _CJK_RANGES)
 
 
-def _get_spacy_model(language: str) -> spacy.language.Language:
-    if language not in _spacy_models:
-        _spacy_models[language] = spacy.blank(language)
-    return _spacy_models[language]
+def _is_mark(char: str) -> bool:
+    return unicodedata.category(char)[0] == "M"
 
 
 class Token(NamedTuple):
@@ -20,25 +32,55 @@ class Token(NamedTuple):
     text: str
 
 
-def tokenize_with_offsets(text: str, language: str = "en") -> list[Token]:
-    """Tokenize text and return list of (start, stop, text) for each token."""
-    if language not in SUPPORTED_LANGUAGES:
-        raise ValueError(
-            f"Unsupported language: '{language}'. Supported: {SUPPORTED_LANGUAGES}"
-        )
+def tokenize_with_offsets(text: str) -> list[Token]:
+    """Tokenize text into words/punctuation and return character offsets.
 
-    nlp = _get_spacy_model(language)
-    doc = nlp(text)
-    return [
-        Token(
-            start=token.idx if token.idx is not None else 0,
-            stop=token.idx + len(token.text)
-            if token.idx is not None
-            else len(token.text),
-            text=token.text,
-        )
-        for token in doc
-    ]
+    Uses a Unicode-aware regex. CJK characters are split individually since they have no whitespace word boundaries.
+    Combining marks are merged back into the preceding token.
+    """
+    raw: list[Token] = []
+    for m in _TOKEN_RE.finditer(text):
+        word = m.group()
+        offset = m.start()
+        if len(word) > 1 and any(_is_cjk(c) for c in word):
+            buf_start: int | None = None
+            for i, ch in enumerate(word):
+                if _is_cjk(ch):
+                    if buf_start is not None:
+                        raw.append(Token(
+                            start=offset + buf_start,
+                            stop=offset + i,
+                            text=word[buf_start:i],
+                        ))
+                        buf_start = None
+                    raw.append(Token(start=offset + i, stop=offset + i + 1, text=ch))
+                else:
+                    if buf_start is None:
+                        buf_start = i
+            if buf_start is not None:
+                raw.append(Token(
+                    start=offset + buf_start,
+                    stop=offset + len(word),
+                    text=word[buf_start:],
+                ))
+        else:
+            raw.append(Token(start=offset, stop=m.end(), text=word))
+
+    if not raw:
+        return raw
+
+    merged: list[Token] = [raw[0]]
+    for tok in raw[1:]:
+        prev = merged[-1]
+        if tok.start == prev.stop and (
+            _is_mark(tok.text[0]) or _is_mark(prev.text[-1])
+        ):
+            merged[-1] = Token(
+                start=prev.start, stop=tok.stop, text=text[prev.start : tok.stop]
+            )
+        else:
+            merged.append(tok)
+    return merged
 
 
 def align_labels_with_tokens(labels, word_ids, b_to_i_label, label_all_tokens=True):
@@ -69,9 +111,8 @@ def convert_offsets_to_bio(
     text: str,
     labels: list,
     label_key: str = "label",
-    language: str = "en",
 ) -> tuple[list[str], list[str]]:
-    substrings = tokenize_with_offsets(text, language=language)
+    substrings = tokenize_with_offsets(text)
     tokens: list[str] = []
     bio_tags: list[str] = []
 
