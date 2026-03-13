@@ -1,0 +1,62 @@
+[
+  {
+    "text": "[date : 这周] [time : 五点] 叫我起床"
+  },
+  {
+    "text": "我们想要 [color_type : 粉红色]"
+  },
+  {
+    "text": "小王关闭了 [house_place : 卧室里的] 灯"
+  },
+  {
+    "text": "[house_place : 走廊]"
+  },
+  {
+    "text": "[place_name : 澳大利亚] 现在几点"
+  },
+  {
+    "text": "olly 告诉我 [time_zone : 格林威治时间加五] 的时间"
+  },
+  {
+    "text": "关闭我 [time : 七点] 的闹钟"
+  },
+  {
+    "text": "我喜欢 [artist_name : 张杰] 的歌曲"
+  },
+  {
+    "text": "告诉我 [date : 今天的] 日期"
+  },
+  {
+    "text": "[date : 今天] 是几号"
+  },
+  {
+    "text": "你能为 [timeofday : 今晚] 的 [meal_type : 晚餐] 订 [food_type : 寿司] 吗"
+  },
+  {
+    "text": "[time : 这周的] 预报啥情况"
+  },
+  {
+    "text": "[date : 这周的] 天气怎么样啊"
+  },
+  {
+    "text": "告诉我 [date : 这周] 的天气"
+  },
+  {
+    "text": "点 [order_type : 外卖]"
+  },
+  {
+    "text": "他们提供 [order_type : 外卖] 吗"
+  },
+  {
+    "text": "他们送 [order_type : 外送] 吗"
+  },
+  {
+    "text": "他们 [order_type : 外送] 上门吗"
+  },
+  {
+    "text": "olly 他们有 [order_type : 外送] 上门吗"
+  },
+  {
+    "text": "定个起床闹钟 [date : 星期四] [time : 七点]"
+  }
+]

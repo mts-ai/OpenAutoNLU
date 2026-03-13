@@ -1,0 +1,62 @@
+[
+  {
+    "text": "wake me up at [time : five am] [date : this week]"
+  },
+  {
+    "text": "[color_type : pink] is all we need"
+  },
+  {
+    "text": "olly turn the lights off in the [house_place : bedroom]"
+  },
+  {
+    "text": "hoover the [house_place : hallway]"
+  },
+  {
+    "text": "what's the time in [place_name : australia]"
+  },
+  {
+    "text": "olly tell me the time in [time_zone : g. m. t. plus five]"
+  },
+  {
+    "text": "cancel my [time : seven am] alarm"
+  },
+  {
+    "text": "i like [artist_name : senatra] songs"
+  },
+  {
+    "text": "tell me [date : today's] date"
+  },
+  {
+    "text": "what date is it [date : today]"
+  },
+  {
+    "text": "could you order [food_type : sushi] for [timeofday : tonight] [meal_type : dinner]"
+  },
+  {
+    "text": "what's the [time : week's] forecast"
+  },
+  {
+    "text": "what's [date : this week's] weather"
+  },
+  {
+    "text": "tell me the weather [date : this week]"
+  },
+  {
+    "text": "order a [order_type : takeaway]"
+  },
+  {
+    "text": "can they provide [order_type : takeaway]"
+  },
+  {
+    "text": "can they do [order_type : delivery]"
+  },
+  {
+    "text": "do they [order_type : deliver] home"
+  },
+  {
+    "text": "olly do they [order_type : deliver] home"
+  },
+  {
+    "text": "set wake up [date : thursday] [time : seven am]"
+  }
+]

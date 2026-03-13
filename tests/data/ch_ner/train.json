@@ -1,0 +1,302 @@
+[
+  {
+    "text": "[date : 星期五] 早上 [time : 九点] 叫醒我"
+  },
+  {
+    "text": "设个 [time : 两小时后] 的闹钟"
+  },
+  {
+    "text": "欧丽暂停 [time : 十秒]"
+  },
+  {
+    "text": "暂停 [time : 十秒钟]"
+  },
+  {
+    "text": "让这里的灯光更加 [color_type : 温暖] 一点"
+  },
+  {
+    "text": "请设置 [color_type : 适合阅读的] 灯光"
+  },
+  {
+    "text": "关掉 [house_place : 浴室] 的灯"
+  },
+  {
+    "text": "olly 把 [house_place : 大厅] 里的灯调暗"
+  },
+  {
+    "text": "关掉 [house_place : 卧室的] 灯"
+  },
+  {
+    "text": "设置灯为 [change_amount : 百分之二十]"
+  },
+  {
+    "text": "olly 把灯光调到 [change_amount : 两成]"
+  },
+  {
+    "text": "小度变暗 [house_place : 厨房] 灯光"
+  },
+  {
+    "text": "调暗 [house_place : 厨房] 灯"
+  },
+  {
+    "text": "olly 打扫 [house_place : 公寓]"
+  },
+  {
+    "text": "给 [house_place : 房子] 吸尘"
+  },
+  {
+    "text": "小度把 [house_place : 房子] 用吸尘器吸干净"
+  },
+  {
+    "text": "[house_place : 地毯]"
+  },
+  {
+    "text": "我想再听一次 [artist_name : 周杰伦] 的歌"
+  },
+  {
+    "text": "我想再次播放那首 [media_type : 音乐]"
+  },
+  {
+    "text": "告诉我 [place_name : 莫斯科] 时间"
+  },
+  {
+    "text": "告诉我 [time_zone : 格林威治时间加五] 是几点"
+  },
+  {
+    "text": "欧丽列出所有评分高的 [food_type : 中] 式 [order_type : 外送]"
+  },
+  {
+    "text": "评分最高的 [food_type : 中餐] [order_type : 外送]"
+  },
+  {
+    "text": "olly 评分最高的 [food_type : 中] 餐 [order_type : 外送]"
+  },
+  {
+    "text": "我想要吃一些 [food_type : 咖喱] 有什么推荐吗"
+  },
+  {
+    "text": "天猫精灵如果有任何推荐的话我想吃点 [food_type : 咖喱]"
+  },
+  {
+    "text": "在 [place_name : 三源里菜市场] 附近找我的 [food_type : 泰国菜] [order_type : 外卖]"
+  },
+  {
+    "text": "停止 [time : 七点] 的闹钟"
+  },
+  {
+    "text": "[date : 今天] 有什么关于 [news_topic : 足球] 的消息吗"
+  },
+  {
+    "text": "请播放 [artist_name : 飞轮海] 的 [song_name : 只对你有感觉]"
+  },
+  {
+    "text": "我喜欢 [music_genre : 摇滚] 音乐"
+  },
+  {
+    "text": "[artist_name : 告五人] 我的最喜爱音乐乐队"
+  },
+  {
+    "text": "请调亮灯 [change_amount : 到最大]"
+  },
+  {
+    "text": "启动 [device_type : 扫地机器人]"
+  },
+  {
+    "text": "启动 [device_type : 扫地机器人]"
+  },
+  {
+    "text": "请为 [meal_type : 晚餐] 订一些 [food_type : 寿司]"
+  },
+  {
+    "text": "我想你下单 [food_type : 汉堡包]"
+  },
+  {
+    "text": "我能从 [business_name : 萨莉亚意式餐厅] 点 [order_type : 外卖] 当 [meal_type : 晚餐] 吗"
+  },
+  {
+    "text": "[business_name : 拜伦] 有 [order_type : 外卖] 吗"
+  },
+  {
+    "text": "定个 [time : 十二点] 的闹钟"
+  },
+  {
+    "text": "设置一个 [time : 四十分钟后] 的闹钟"
+  },
+  {
+    "text": "设个 [general_frequency : 每个工作日] [time : 八点] 的闹钟"
+  },
+  {
+    "text": "[weather_descriptor : 下雨] 了吗"
+  },
+  {
+    "text": "要 [weather_descriptor : 下雨] 了嘛"
+  },
+  {
+    "text": "正在 [weather_descriptor : 下雪] 吗"
+  },
+  {
+    "text": "[date : 这周的] 天气如何"
+  },
+  {
+    "text": "告诉我 [media_type : 环球时报] 的新闻"
+  },
+  {
+    "text": "[media_type : 中国新闻网] 有什么新闻"
+  },
+  {
+    "text": "[media_type : 呼市新闻] 的最新新聞是什么"
+  },
+  {
+    "text": "播放 [artist_name : 五月天]"
+  },
+  {
+    "text": "放一些 [artist_name : 五月天] 的音乐"
+  },
+  {
+    "text": "[player_setting : 随机播放] 此播放列表"
+  },
+  {
+    "text": "给我讲一个 [joke_type : 有趣的] 笑话"
+  },
+  {
+    "text": "告诉我 [date : 今天] 的情况"
+  },
+  {
+    "text": "下单 [food_type : 比萨]"
+  },
+  {
+    "text": "从 [business_name : 美团外卖] 点 [food_type : 比萨]"
+  },
+  {
+    "text": "我的 [order_type : 外卖] 还有多久"
+  },
+  {
+    "text": "[business_name : 多米诺的] [order_type : 运送] 情况"
+  },
+  {
+    "text": "播放我的 [music_genre : 爵士乐] 播放列表"
+  },
+  {
+    "text": "开始我的 [music_genre : 爵士乐] 播放列表"
+  },
+  {
+    "text": "我喜欢 [music_genre : 爵士乐]"
+  },
+  {
+    "text": "你能播放一些 [music_genre : 爵士] 乐吗"
+  },
+  {
+    "text": "启用 [player_setting : 随机播放]"
+  },
+  {
+    "text": "将亮度设置 [change_amount : 到五成]"
+  },
+  {
+    "text": "定个 [time : 十点] 闹钟"
+  },
+  {
+    "text": "告诉我最新的 [news_topic : 科技] 消息"
+  },
+  {
+    "text": "告诉我最新的 [news_topic : 科技] 消息"
+  },
+  {
+    "text": "现在 [weather_descriptor : 下雨] 了吗"
+  },
+  {
+    "text": "打开我的 [artist_name : 周杰伦] 歌单"
+  },
+  {
+    "text": "从我的播放列表播放 [artist_name : 陈奕迅] 的歌"
+  },
+  {
+    "text": "[song_name : 最后一首]"
+  },
+  {
+    "text": "开启 [device_type : 智能插座]"
+  },
+  {
+    "text": "打开 [device_type : 插头]"
+  },
+  {
+    "text": "开启我的 [device_type : 智能插座]"
+  },
+  {
+    "text": "[food_type : 必胜客] 做 [order_type : 外卖] 吗"
+  },
+  {
+    "text": "我最喜欢的 [food_type : 比萨] 可以点 [order_type : 外卖] 吗"
+  },
+  {
+    "text": "[order_type : 外带] [food_type : 西班牙] 的"
+  },
+  {
+    "text": "[place_name : 北京] 天气咋样啊"
+  },
+  {
+    "text": "告诉我 [place_name : 上海] 的天气情况"
+  },
+  {
+    "text": "调整光线为 [color_type : 适合阅读]"
+  },
+  {
+    "text": "请调整灯光 [color_type : 有利于观看]"
+  },
+  {
+    "text": "使得 [house_place : 房间] 更明亮"
+  },
+  {
+    "text": "[date : 今天] 几月几号"
+  },
+  {
+    "text": "[date : 今天] 是周几"
+  },
+  {
+    "text": "小爱 [weather_descriptor : 下雨]"
+  },
+  {
+    "text": "把灯光改成 [color_type : 绿色]"
+  },
+  {
+    "text": "请打扫 [house_place : 地板]"
+  },
+  {
+    "text": "打开 [device_type : 电饭煲插座]"
+  },
+  {
+    "text": "关掉 [device_type : 电饭煲的插座]"
+  },
+  {
+    "text": "你能帮我从 [business_name : 戶戶送] 订一些 [food_type : 寿司] 吗"
+  },
+  {
+    "text": "设个 [timeofday : 下午] [time : 四点] 的闹钟"
+  },
+  {
+    "text": "olly [time : 下午三点] 提醒我去 [event_name : 音乐会]"
+  },
+  {
+    "text": "提醒我 [time : 下午三点] 去 [event_name : 音乐会]"
+  },
+  {
+    "text": "[timeofday : 早上] [event_name : 航班] 我设闹钟了吗"
+  },
+  {
+    "text": "[place_name : 郑州] [weather_descriptor : 下雨] 了吗"
+  },
+  {
+    "text": "[date : 今天] [weather_descriptor : 下雨] 吗"
+  },
+  {
+    "text": "[place_name : 世界] 上到底发生了什么"
+  },
+  {
+    "text": "[place_name : 佛山] 发生了什么"
+  },
+  {
+    "text": "给我展示一些来自 [media_type : 腾讯新闻] 的消息"
+  },
+  {
+    "text": "展示一些 [media_type : 今日头条] 的新闻"
+  }
+]

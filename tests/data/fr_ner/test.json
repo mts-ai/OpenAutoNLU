@@ -1,0 +1,62 @@
+[
+  {
+    "text": "réveille-moi à [time : cinq heures du matin] [date : cette semaine]"
+  },
+  {
+    "text": "le [color_type : rose] est tout ce dont nous avons besoin"
+  },
+  {
+    "text": "olly éteindre les lumières dans la [house_place : chambre]"
+  },
+  {
+    "text": "passer l'aspirateur dans le [house_place : couloir]"
+  },
+  {
+    "text": "quelle heure est-il en [place_name : australie]"
+  },
+  {
+    "text": "olly donne-moi l'heure en [time_zone : g. m. t. plus cinq]"
+  },
+  {
+    "text": "annuler mon alarme de [time : sept heures du matin]"
+  },
+  {
+    "text": "j' aime les chansons de [artist_name : jacques brel]"
+  },
+  {
+    "text": "dis-moi la date [date : d'aujourd'hui]"
+  },
+  {
+    "text": "quelle date est-il [date : aujourd'hui]"
+  },
+  {
+    "text": "pourrais-tu commander des [food_type : sushis] pour le [meal_type : dîner] de [timeofday : ce soir]"
+  },
+  {
+    "text": "quelles sont les prévisions [time : de la semaine]"
+  },
+  {
+    "text": "quel temps fait-il [date : cette semaine]"
+  },
+  {
+    "text": "dis-moi quel temps il fera [date : cette semaine]"
+  },
+  {
+    "text": "commande un repas [order_type : à emporter]"
+  },
+  {
+    "text": "peuvent-ils proposer des plats [order_type : à emporter]"
+  },
+  {
+    "text": "peuvent-ils faire la [order_type : livraison]"
+  },
+  {
+    "text": "est-ce qu'ils [order_type : livrent] à domicile"
+  },
+  {
+    "text": "olly est-ce qu'ils [order_type : livrent] à la maison"
+  },
+  {
+    "text": "régler le réveil [date : jeudi] à [time : sept heures du matin]"
+  }
+]

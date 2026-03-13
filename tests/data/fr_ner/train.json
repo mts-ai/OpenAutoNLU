@@ -1,0 +1,302 @@
+[
+  {
+    "text": "réveille-moi à [time : neuf heures du matin] le [date : vendredi]"
+  },
+  {
+    "text": "régler une alarme pour [time : deux heures à partir dès maintenant]"
+  },
+  {
+    "text": "olly mets en pause pour [time : dix secondes]"
+  },
+  {
+    "text": "pause pendant [time : dix secondes]"
+  },
+  {
+    "text": "rendre la luminosité un peu plus [color_type : chaud] ici"
+  },
+  {
+    "text": "merci de régler l'éclairage [color_type : adapté à la lecture]"
+  },
+  {
+    "text": "éteindre la lumière dans la [house_place : salle de bain]"
+  },
+  {
+    "text": "olly tamiser les lumières dans la [house_place : salle]"
+  },
+  {
+    "text": "éteins les lumières dans la [house_place : chambre]"
+  },
+  {
+    "text": "régler les lumières [change_amount : à vingt pour cent]"
+  },
+  {
+    "text": "olly régler les lumières [change_amount : à vingt pour cent]"
+  },
+  {
+    "text": "tamiser les lumières dans la [house_place : cuisine] olly"
+  },
+  {
+    "text": "tamiser les lumières dans la [house_place : cuisine]"
+  },
+  {
+    "text": "olly nettoie la [house_place : télévision]"
+  },
+  {
+    "text": "passer l'aspirateur dans la [house_place : maison]"
+  },
+  {
+    "text": "olly passer l'aspirateur dans la [house_place : maison]"
+  },
+  {
+    "text": "passer l'aspirateur sur les [house_place : tapis] autour"
+  },
+  {
+    "text": "je veux écouter la chanson de [artist_name : jacques brel] encore une fois"
+  },
+  {
+    "text": "je veux rejouer cette [media_type : musique]"
+  },
+  {
+    "text": "dis-moi l'heure à [place_name : bordeaux]"
+  },
+  {
+    "text": "dis-moi l'heure en [time_zone : t.m.g. plus cinq]"
+  },
+  {
+    "text": "olly liste les options de [order_type : livraison] les plus cotées pour la nourriture [food_type : chinoise]"
+  },
+  {
+    "text": "les options de [order_type : livraison] les plus notées pour du [food_type : chinois]"
+  },
+  {
+    "text": "olly les options de [order_type : livraison] les plus notées pour du [food_type : chinois]"
+  },
+  {
+    "text": "je veux du [food_type : piment] pour toutes les recommandations"
+  },
+  {
+    "text": "je veux du [food_type : curry] pour toutes les recommandations olly"
+  },
+  {
+    "text": "trouve mes [order_type : plats à emporter] [food_type : thaïlandais] autour de [place_name : la concorde]"
+  },
+  {
+    "text": "arrêter l'alarme de [time : sept heures du matin]"
+  },
+  {
+    "text": "ce qui se passe dans le [news_topic : football] [date : aujourd'hui]"
+  },
+  {
+    "text": "s'il te plais joue j' ai demandé à la lune d' [artist_name : indochine]"
+  },
+  {
+    "text": "j'aime la musique [music_genre : rock]"
+  },
+  {
+    "text": "ma musique favori de mon groupe [artist_name : phoenix]"
+  },
+  {
+    "text": "augmenter les lumières [change_amount : au maximum] s'il vous plaît"
+  },
+  {
+    "text": "salut démarrez le [device_type : robot aspirateur]"
+  },
+  {
+    "text": "allumer le [device_type : robot nettoyeur]"
+  },
+  {
+    "text": "s'il te plaît commande du [food_type : sushi] pour le [meal_type : dîner]"
+  },
+  {
+    "text": "salut j'aimerais que tu commandes un [food_type : hamburger]"
+  },
+  {
+    "text": "puis-je commander un [meal_type : dîner] [order_type : à emporter] chez [business_name : byron's]"
+  },
+  {
+    "text": "est-ce que [business_name : byron's] prend en charge [order_type : les plats à emporter]"
+  },
+  {
+    "text": "régler une alarme pour [time : douze]"
+  },
+  {
+    "text": "régler l'alarme pour [time : huit] tous les jours de la semaine"
+  },
+  {
+    "text": "il [weather_descriptor : pleut]"
+  },
+  {
+    "text": "quel est le temps [date : cette semaine]"
+  },
+  {
+    "text": "dis moi [media_type : b. b. c.] nouvelles"
+  },
+  {
+    "text": "quelles sont les nouvelles sur [media_type : b. b. c.] nouvelles"
+  },
+  {
+    "text": "quel est les dernières nouvelles [media_type : de b. b. c.]"
+  },
+  {
+    "text": "joue [artist_name : daft punk]"
+  },
+  {
+    "text": "joue un peu de [artist_name : coldplay]"
+  },
+  {
+    "text": "[player_setting : mélange] cette liste de lecture"
+  },
+  {
+    "text": "dis moi une [joke_type : bonne] blague"
+  },
+  {
+    "text": "parle moi [date : d'aujourd'hui]"
+  },
+  {
+    "text": "commande une [food_type : pizza]"
+  },
+  {
+    "text": "commande moi un [food_type : byron] chez [business_name : deliveroo]"
+  },
+  {
+    "text": "combien de temps avant ma commande [order_type : à emporter]"
+  },
+  {
+    "text": "état de [order_type : livraison] de [business_name : domino's]"
+  },
+  {
+    "text": "joue ma playlist [music_genre : jazz]"
+  },
+  {
+    "text": "commence ma playlist de [music_genre : jazz]"
+  },
+  {
+    "text": "j'aime le [music_genre : jazz]"
+  },
+  {
+    "text": "peux-tu jouer du [music_genre : jazz]"
+  },
+  {
+    "text": "active le [player_setting : mode aléatoire]"
+  },
+  {
+    "text": "régler la luminosité [change_amount : à cinquante pour cent]"
+  },
+  {
+    "text": "régler l'alarme à [time : dix heures du matin]"
+  },
+  {
+    "text": "dites-moi les dernières nouvelles de la [news_topic : technologie]"
+  },
+  {
+    "text": "dites-moi les dernières nouvelles de la [news_topic : technologie]"
+  },
+  {
+    "text": "est-ce qu'il [weather_descriptor : pleut] maintenant"
+  },
+  {
+    "text": "active ma liste de lecture [artist_name : michael jackson]"
+  },
+  {
+    "text": "jouer au [artist_name : michael jackson] dans ma playlist"
+  },
+  {
+    "text": "jouer [song_name : la dernière chanson] préféré de ma playlist"
+  },
+  {
+    "text": "allume la [device_type : prise]"
+  },
+  {
+    "text": "allume la [device_type : prise]"
+  },
+  {
+    "text": "allumer ma [device_type : prise]"
+  },
+  {
+    "text": "est-ce que [food_type : dominoes] font [order_type : à emporter]"
+  },
+  {
+    "text": "est-ce que ma [food_type : pizzeria] préférée est disponible pour des commandes [order_type : à emporter]"
+  },
+  {
+    "text": "puis-je commander un plat [food_type : espagnol] [order_type : à emporter]"
+  },
+  {
+    "text": "quel temps fait-il à [place_name : paris]"
+  },
+  {
+    "text": "dis-moi la météo en [place_name : monaco]"
+  },
+  {
+    "text": "s'il vous plaît rendre les lumières conviviales pour la [color_type : lecture amicale]"
+  },
+  {
+    "text": "s'il vous plaît rendre les lumières [color_type : amicales]"
+  },
+  {
+    "text": "rends la [house_place : chambre] plus lumineuse"
+  },
+  {
+    "text": "quelle est la date [date : aujourd'hui]"
+  },
+  {
+    "text": "quel jour sommes-nous [date : aujourd'hui]"
+  },
+  {
+    "text": "est-ce qu'il [weather_descriptor : pleut] dehors olly"
+  },
+  {
+    "text": "changer les lumières en [color_type : verte]"
+  },
+  {
+    "text": "nettoie le [house_place : sol] s'il te plaît"
+  },
+  {
+    "text": "active la [device_type : prise de cuiseur à riz]"
+  },
+  {
+    "text": "éteindre la [device_type : prise de cuiseur à riz]"
+  },
+  {
+    "text": "pourriez-vous s'il vous plaît m'aider à commander des [food_type : sushis] de [business_name : deliveroo]"
+  },
+  {
+    "text": "régler une alarme pour [time : quatre] heures de [timeofday : l'après-midi]"
+  },
+  {
+    "text": "olly allerte moi a [time : trois heures de l'après-midi] pour que j'aille au [event_name : concert]"
+  },
+  {
+    "text": "préviens-moi à [time : trois heures du soir] pour aller au [event_name : concert]"
+  },
+  {
+    "text": "ai-je une alarme réglée pour le [event_name : vol] du [timeofday : matin]"
+  },
+  {
+    "text": "il est [weather_descriptor : en train de pleuvoir] à [place_name : québec]"
+  },
+  {
+    "text": "va-t-il [weather_descriptor : pleuvoir] [date : aujourd'hui]"
+  },
+  {
+    "text": "ce qui se passe dans le [place_name : monde]"
+  },
+  {
+    "text": "que se passe-t-il à [place_name : cambridge]"
+  },
+  {
+    "text": "montre moi des nouvelles de [media_type : b. b. c.]"
+  },
+  {
+    "text": "olly montre moi des nouvelles [media_type : b. b. c.]"
+  },
+  {
+    "text": "jouer [media_type : c. n. n.] nouvelles"
+  },
+  {
+    "text": "olly [media_type : hackernews]"
+  },
+  {
+    "text": "met un peu de [music_genre : hihop]"
+  }
+]
