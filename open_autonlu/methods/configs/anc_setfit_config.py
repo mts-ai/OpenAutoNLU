@@ -1,9 +1,11 @@
-import warnings
+import logging
 from dataclasses import dataclass
 from typing import Optional
 
 from ..constants import DEFAULT_TEMPLATE_BY_LANGUAGE
 from .setfit_config import SetFitMethodConfig
+
+log = logging.getLogger(__name__)
 
 
 @dataclass
@@ -60,9 +62,7 @@ class AncSetFitConfig(SetFitMethodConfig):
         super().__post_init__()
 
         if self.template in DEFAULT_TEMPLATE_BY_LANGUAGE.values():
-            warnings.warn(
+            log.warning(
                 "Using the default AncSetFit template. "
-                "For best results, set a custom 'template' in config_overrides when creating the pipeline.",
-                UserWarning,
-                stacklevel=5,
+                "For best results, set a custom 'template' in config_overrides when creating the pipeline."
             )
