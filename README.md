@@ -73,7 +73,7 @@ from open_autonlu.methods.data_types import SaveFormat
 pipeline = TextClassificationTrainingPipeline(
     train_path="train.csv",
     test_path="test.csv",
-    config_overrides={"language": "en"}  # "en" or "ru"
+    config_overrides={"language": "en"}  # for non-en/ru also set "model_name_or_path"
 )
 result = pipeline.train()
 pipeline.save("./model", SaveFormat.ONNX)
@@ -82,7 +82,7 @@ pipeline.save("./model", SaveFormat.ONNX)
 pipeline = TokenClassificationTrainingPipeline(
     train_path="train.json",
     test_path="test.json",
-    config_overrides={"language": "en"}  # "en" or "ru"
+    config_overrides={"language": "en"}  # for non-en/ru also set "model_name_or_path"
 )
 result = pipeline.train()
 pipeline.save("./model", SaveFormat.ONNX)
@@ -140,7 +140,7 @@ from open_autonlu.methods.data_types import OodMethod, SaveFormat
 pipeline = TextClassificationTrainingPipeline(
     train_path="train.csv",
     config_overrides={
-        "language": "en",                # Prompt language for LLM pipelines ("en" or "ru")
+        "language": "en",                # for non-en/ru also set "model_name_or_path"
         "ood_method": OodMethod.LOGIT,   # OOD detection method
         "batch_size": 32,                # Batch size
     }
@@ -175,7 +175,7 @@ config_overrides = {
 
 ### LLM Data Augmentation
 
-Automatically augment underrepresented classes using LLM generation. The `language` parameter controls which prompts are sent to the LLM (`"en"` for English, `"ru"` for Russian).
+Automatically augment underrepresented classes using LLM generation. The `language` parameter controls which prompts are sent to the LLM (`"en"` for English, `"ru"` for Russian). For other languages, English prompts are used with an instruction to generate text in the language of the provided examples.
 
 ```python
 import os
@@ -255,6 +255,40 @@ config_overrides = {
 config_overrides = {
     "Finetuner": {
         "num_hpo_trials": 15,  # Hyperparameter optimization trials
+    }
+}
+```
+
+## Multilingual Support
+
+The pipeline has been tested on **English (en), Russian (ru), French (fr), Chinese (zh), Arabic (ar), and Hindi (hi)**. Correct tokenization and NER behavior is guaranteed for these languages. Other languages are also supported but have not been explicitly validated.
+
+### Model selection for non-default languages
+
+Default models are only available for English (`bert-base-uncased`) and Russian (`ai-forever/ruBert-base`). For any other language you **must** set `model_name_or_path` in `config_overrides`:
+
+```python
+pipeline = TextClassificationTrainingPipeline(
+    train_path="train.csv",
+    config_overrides={
+        "language": "fr",
+        "model_name_or_path": "MODEL_NAME",
+    }
+)
+```
+
+Any HuggingFace checkpoint that supports your target language can be used.
+
+### AncSetFit template
+
+When the pipeline selects AncSetFit (2-5 examples per class), it prepends a `template` string to each `anc_label` to form anchor sentences. Default templates exist only for English and Russian. For other languages a custom `template` **must** be provided, otherwise the pipeline will raise an error. Even for English/Russian, setting a domain-specific template is recommended for best results:
+
+```python
+config_overrides={
+    "language": "fr",
+    "model_name_or_path": "camembert-base",
+    "AncSetFitMethod": {
+        "template": "User asks the bot to perform a request using the skill: ",  # write in your target language
     }
 }
 ```
