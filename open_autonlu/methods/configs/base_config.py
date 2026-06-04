@@ -12,8 +12,9 @@ class BaseMethodConfig:
     Attributes:
         model_name_or_path: HuggingFace model identifier or local path.
             If None, resolved from language by DEFAULT_MODEL_BY_LANGUAGE.
-        language: Language("en" or "ru"). Determines default model when
-            model_name_or_path is not set: en - bert-base-uncased, ru - ai-forever/ruBert-base.
+        language: Language code (e.g. "en", "ru"). If model_name_or_path is not set,
+            a default model is used only for "en" and "ru"; for other languages
+            you must set model_name_or_path.
         tokenizer_kwargs: Additional arguments passed to the tokenizer.
         max_seq_length: Maximum sequence length for tokenization.
         dev_fraction: Fraction of training data to hold out as a dev set
@@ -28,6 +29,12 @@ class BaseMethodConfig:
 
     def __post_init__(self) -> None:
         if self.model_name_or_path is None:
+            if self.language not in DEFAULT_MODEL_BY_LANGUAGE:
+                raise ValueError(
+                    f"Language '{self.language}' has no default model. "
+                    f"Set 'model_name_or_path' in config_overrides to a checkpoint that supports this language "
+                    f"Default models are only available for: {', '.join(DEFAULT_MODEL_BY_LANGUAGE)}."
+                )
             self.model_name_or_path = DEFAULT_MODEL_BY_LANGUAGE[self.language]
 
 

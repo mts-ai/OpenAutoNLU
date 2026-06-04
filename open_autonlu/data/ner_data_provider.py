@@ -14,35 +14,27 @@ class SimpleNerDataProvider(AbstractDataProvider):
             if path := getattr(self, f"{split_name}_path"):
                 with open(path) as f:
                     records = json.load(f)
-                data_set = []
-                if "text" in records[0]:
-                    if "spans" in records[0]:
-                        for record in records:
-                            tokens, bio_tags = convert_offsets_to_bio(
-                                record["text"],
-                                record["spans"],
-                                language=self.language,
-                            )
-                            data_set.append(
-                                {
-                                    "text": record["text"],
-                                    "tokens": tokens,
-                                    "labels": bio_tags,
-                                }
-                            )
-                    else:
-                        for record in records:
-                            tokens, bio_tags = self.from_brackets(record["text"])
-                            data_set.append(
-                                {
-                                    "text": " ".join(tokens),
-                                    "tokens": tokens,
-                                    "labels": bio_tags,
-                                }
-                            )
-
-                splits[split_name] = Dataset.from_list(data_set)
+                splits[split_name] = Dataset.from_list(
+                    [self._parse_record(r) for r in records]
+                )
         return DatasetDict(splits)
+
+    def _parse_record(self, record: dict) -> dict:
+        if "tokens" in record and "labels" in record:
+            tokens, bio_tags = record["tokens"], record["labels"]
+            text = record.get("text", " ".join(tokens))
+        elif "text" in record and "spans" in record:
+            tokens, bio_tags = convert_offsets_to_bio(record["text"], record["spans"])
+            text = record["text"]
+        elif "text" in record:
+            tokens, bio_tags = self.from_brackets(record["text"])
+            text = " ".join(tokens)
+        else:
+            raise ValueError(
+                "Record must contain either 'tokens'+'labels', "
+                "'text'+'spans', or bracket format."
+            )
+        return {"text": text, "tokens": tokens, "labels": bio_tags}
 
     @staticmethod
     def from_brackets(text: str) -> List[str]:

@@ -1,6 +1,12 @@
+import logging
 from types import SimpleNamespace
 
 import outlines
+
+log = logging.getLogger(__name__)
+
+SUPPORTED_PROMPT_LANGUAGES = frozenset({"en", "ru"})
+FALLBACK_PROMPT_LANGUAGE = "en"
 
 # ---------------------------------------------------------------------------
 # English prompts
@@ -40,8 +46,15 @@ def generate_artificial_data(topic, texts, data_size):
     You should provide {{ data_size }} texts."""
 
 
+LANGUAGE_OF_EXAMPLES_INSTRUCTION = (
+    "Generate all texts in the same language as the provided examples."
+)
+
+
 @outlines.prompt
-def generate_texts(topic, texts, data_size, domain_desc=None, label_desc=None):
+def generate_texts(
+    topic, texts, data_size, domain_desc=None, label_desc=None, extra_instruction=None
+):
     """### TASK
     Generate EXACTLY {{ data_size }} new unique texts that belong to the category "{{ topic }}", preserve the characteristic linguistic features of this category, but contain new, original content.
     {% if domain_desc %}
@@ -67,6 +80,9 @@ def generate_texts(topic, texts, data_size, domain_desc=None, label_desc=None):
     5. Preserve the stylistic features and emotional tone typical of the category
     6. Preserve the punctuation and formatting features characteristic of the category (for example, if punctuation is absent in the examples, this indicates that the generated texts should also follow this punctuation pattern)
     7. Generate EXACTLY {{ data_size }} texts — no more and no fewer
+    {% if extra_instruction %}
+    8. {{ extra_instruction }}
+    {% endif %}
 
     IMPORTANT: Your goal is not to mechanically change individual words in examples, but to create new texts that could organically fit into the corpus of texts of this category, preserving their stylistic and structural features.
 
@@ -255,11 +271,19 @@ def analyze_domain_ru(examples_by_label, label_names):
 # ---------------------------------------------------------------------------
 
 
+def _generate_texts_with_language_instruction(*args, **kwargs):
+    kwargs.setdefault("extra_instruction", LANGUAGE_OF_EXAMPLES_INSTRUCTION)
+    return generate_texts(*args, **kwargs)
+
+
 def get_prompts(language: str = "en") -> SimpleNamespace:
     """Return a namespace of prompts for the given language.
 
     Args:
-        language: Language code ("en" or "ru").
+        language: Language code. Only "en" and "ru" have dedicated prompts.
+            Any other language falls back to English prompts.
+            In fallback mode, the generation prompt includes an instruction to
+            generate texts in the same language as the provided examples.
 
     Returns:
         SimpleNamespace with attributes:
@@ -268,6 +292,15 @@ def get_prompts(language: str = "en") -> SimpleNamespace:
             label_prefix, default_label_desc_template,
             domain_description_header, label_descriptions_header
     """
+    requested_language = language
+    if language not in SUPPORTED_PROMPT_LANGUAGES:
+        log.warning(
+            "No prompts for language '%s'. Falling back to '%s' for data generation.",
+            language,
+            FALLBACK_PROMPT_LANGUAGE,
+        )
+        language = FALLBACK_PROMPT_LANGUAGE
+
     if language == "ru":
         return SimpleNamespace(
             default_system_prompt=DEFAULT_SYSTEM_PROMPT_RU,
@@ -285,10 +318,15 @@ def get_prompts(language: str = "en") -> SimpleNamespace:
             label_descriptions_header="ОПИСАНИЯ МЕТОК:",
         )
 
+    generate_texts_fn = (
+        _generate_texts_with_language_instruction
+        if requested_language not in SUPPORTED_PROMPT_LANGUAGES
+        else generate_texts
+    )
     return SimpleNamespace(
         default_system_prompt=DEFAULT_SYSTEM_PROMPT,
         analyzer_system_prompt=ANALYZER_SYSTEM_PROMPT,
-        generate_texts=generate_texts,
+        generate_texts=generate_texts_fn,
         analyze_domain=analyze_domain,
         generate_artificial_data=generate_artificial_data,
         label_prefix="LABEL",

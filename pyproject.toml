@@ -45,7 +45,6 @@ dependencies = [
     "python-fire==0.1.0",
     "python-dotenv==1.1.0",
     "skl2onnx>=1.17.0",
-    "spacy>=3.0.0",
     "iterative-stratification==0.1.9",
     "onnxruntime==1.19.2 ; sys_platform == 'darwin' or (sys_platform == 'linux' and platform_machine != 'x86_64')",
     "onnxruntime-gpu==1.19.2 ; sys_platform == 'linux' and platform_machine == 'x86_64'",

@@ -1,0 +1,302 @@
+[
+  {
+    "text": "صحيني [time : تسعة الصباح] يوم [date : الجمعة]"
+  },
+  {
+    "text": "حط منبه [time : بعد ساعتين من الحين]"
+  },
+  {
+    "text": "أوللي وقف مؤقتاً لمدة [time : عشر ثواني]"
+  },
+  {
+    "text": "توقف مؤقتا لمدة [time : عشر ثواني]"
+  },
+  {
+    "text": "اجعل الإضاءة أكثر [color_type : دفء] بقليل هنا"
+  },
+  {
+    "text": "تكفى اضبط الإضاءة وخلها [color_type : مريحة للقراءة]"
+  },
+  {
+    "text": "طف لمبة [house_place : الحمام]"
+  },
+  {
+    "text": "olly اخفت النور في [house_place : المجلس]"
+  },
+  {
+    "text": "طفي لمبات [house_place : غرفة النوم]"
+  },
+  {
+    "text": "أوزن اللمبة [change_amount : على عشرين بالمية]"
+  },
+  {
+    "text": "olly حط الإضاءة على [change_amount : عشرين في المية]"
+  },
+  {
+    "text": "خفت الأضواء في [house_place : المطبخ] أولي"
+  },
+  {
+    "text": "اخفت اللمبات في [house_place : المطبخ]"
+  },
+  {
+    "text": "olly نظف [house_place : الشقة]"
+  },
+  {
+    "text": "نظف [house_place : البيت] بالمكنسة الكهربائية"
+  },
+  {
+    "text": "كنس [house_place : البيت] olly"
+  },
+  {
+    "text": "اكنس [house_place : السجادات]"
+  },
+  {
+    "text": "أبغى اسمع أغنية [artist_name : محمد عبده] مرة ثانية"
+  },
+  {
+    "text": "أريد تشغيل هذي [media_type : الموسيقا] مرة ثانية"
+  },
+  {
+    "text": "قل لي الوقت في [place_name : الرياض]"
+  },
+  {
+    "text": "قل لي الوقت في [time_zone : توقيت السعودية]"
+  },
+  {
+    "text": "[order_type : توصيل] [food_type : صيني]"
+  },
+  {
+    "text": "أكثر خيارات [order_type : التوصيل] تقيماً للاطعمة [food_type : الحجازية]"
+  },
+  {
+    "text": "olly وش المطاعم الاكثر تقييم للاكل [food_type : الحجازي] و [order_type : يوصلوا]"
+  },
+  {
+    "text": "[food_type : هندي]"
+  },
+  {
+    "text": "[food_type : كاري] أي أولاي"
+  },
+  {
+    "text": "بيتزايتي [food_type : بيتزا] [order_type : توصيل] [place_name : مطعم الشرق]"
+  },
+  {
+    "text": "وقف منبه [time : سبعة الصبح]"
+  },
+  {
+    "text": "إيش أخبار [news_topic : كرة القدم] [date : اليوم]"
+  },
+  {
+    "text": "من فضلك شغل [artist_name : البيتلز] [song_name : أمس]"
+  },
+  {
+    "text": "أنا أحب موسيقى [music_genre : الروك]"
+  },
+  {
+    "text": "حقي مفضل موسيقى فرقة [artist_name : كاظم الساهر]"
+  },
+  {
+    "text": "اترجاك رفع الأضواء إلى [change_amount : الحد الأقصى]"
+  },
+  {
+    "text": "شغل [device_type : المكنسة الكهربائية]"
+  },
+  {
+    "text": "شغل [device_type : المكنسة الروبوتية]"
+  },
+  {
+    "text": "اطلب [food_type : مقلوبة] [meal_type : للعشا]"
+  },
+  {
+    "text": "[food_type : برغر]"
+  },
+  {
+    "text": "عادي أطلب [meal_type : عشا] [order_type : سفري] من [business_name : مطعم الطازج]"
+  },
+  {
+    "text": "هل يدعم وجبات [business_name : هرفي] [order_type : يوصل الطلبات]"
+  },
+  {
+    "text": "حط المنبه على [time : اثنعش]"
+  },
+  {
+    "text": "حط منبه بعد [time : أربعين دقيقة من الحين]"
+  },
+  {
+    "text": "حط منبه على [time : ثمنية] [general_frequency : كل يوم في الإسبوع]"
+  },
+  {
+    "text": "هل [weather_descriptor : تمطر]"
+  },
+  {
+    "text": "سوف [weather_descriptor : تمطر]"
+  },
+  {
+    "text": "هل [weather_descriptor : تثلج] حاليا"
+  },
+  {
+    "text": "ما هو الطقس [date : هذا الاسبوع]"
+  },
+  {
+    "text": "قل لي أخبار [media_type : بي. بي. سي.]"
+  },
+  {
+    "text": "ايش الأخبار على [media_type : العربية]"
+  },
+  {
+    "text": "ما هي أخبار [media_type : الجزيرة]"
+  },
+  {
+    "text": "شغل [artist_name : أهواك]"
+  },
+  {
+    "text": "بعض [artist_name : لعب سيء]"
+  },
+  {
+    "text": "[player_setting : شغل بترتيب عشوائي] قايمة الأغاني هذي"
+  },
+  {
+    "text": "قول لي نكتة [joke_type : جيدة]"
+  },
+  {
+    "text": "خبرني عن [date : اليوم]"
+  },
+  {
+    "text": "اطلب [food_type : pizza]"
+  },
+  {
+    "text": "[food_type : بيتزا] من [business_name : مطعم الشرقي]"
+  },
+  {
+    "text": "[order_type : سفري]"
+  },
+  {
+    "text": "كيف وضع [order_type : التوصيل] عند [business_name : domino's]"
+  },
+  {
+    "text": "شغل قائمة التشغيل [music_genre : جاز] الخاص بي"
+  },
+  {
+    "text": "حقي [music_genre : الشعبية] قائمة التشغيل"
+  },
+  {
+    "text": "[music_genre : jazz]"
+  },
+  {
+    "text": "هل يمكنك أن تعزف شوية موسيقى [music_genre : jazz]"
+  },
+  {
+    "text": "فعله [player_setting : تشغيل عشوائي]"
+  },
+  {
+    "text": "حط السطوع [change_amount : على خمسين في الميه]"
+  },
+  {
+    "text": "حط المنبه على [time : عشرة الصباح]"
+  },
+  {
+    "text": "أخبرني بآخر أخبار [news_topic : التقنية]"
+  },
+  {
+    "text": "انطيني آخر أخبار [news_topic : التكنولوجيا]"
+  },
+  {
+    "text": "هل [weather_descriptor : تمطر] الحين"
+  },
+  {
+    "text": "شغلي قايمة تشغيل [artist_name : كاظم الساهر] حقتي"
+  },
+  {
+    "text": "شغل [artist_name : بلقيس] من قايمة الأغاني حقتي"
+  },
+  {
+    "text": "شغل [song_name : الأغنية الأخيرة] من قائمتي المفضلة"
+  },
+  {
+    "text": "[device_type : plug] turn on"
+  },
+  {
+    "text": "شغل [device_type : الفيش]"
+  },
+  {
+    "text": "شغل [device_type : الفيش] حقي"
+  },
+  {
+    "text": "[food_type : الدومينو] [order_type : takeaway]"
+  },
+  {
+    "text": "[food_type : بيتزا] [order_type : توصيل]"
+  },
+  {
+    "text": "[order_type : جاهز] [food_type : اسباني]"
+  },
+  {
+    "text": "كيف الجو في [place_name : الرياض]"
+  },
+  {
+    "text": "قل لي الطقس في [place_name : أبوظبي]"
+  },
+  {
+    "text": "لو سمحت خل اضاءة [color_type : القراءه لطيفه]"
+  },
+  {
+    "text": "تكفى خل اللمبات [color_type : مريحه للنظر]"
+  },
+  {
+    "text": "اجعل [house_place : الغرفة] أكثر إنارة"
+  },
+  {
+    "text": "كم التاريخ [date : اليوم]"
+  },
+  {
+    "text": "ما هو [date : اليوم]"
+  },
+  {
+    "text": "قاعدة [weather_descriptor : تمطر] برا يا olly ولا لا"
+  },
+  {
+    "text": "غير اللمبات وخليها [color_type : خضرا]"
+  },
+  {
+    "text": "تكفى نظف [house_place : الأرضية]"
+  },
+  {
+    "text": "شغل [device_type : فيش قدر الضغط]"
+  },
+  {
+    "text": "turn off [device_type : rice cooker socket]"
+  },
+  {
+    "text": "[food_type : سوشي] من [business_name : شيرو]"
+  },
+  {
+    "text": "حط منبه على [time : أربعة] [timeofday : العصر]"
+  },
+  {
+    "text": "olly نبهني الساعة [time : ثلاثة بعد الظهر] اروح [event_name : الحفلة]"
+  },
+  {
+    "text": "نبهني [time : ثلاثة بعد الظهر] عشان أروح [event_name : الحفلة]"
+  },
+  {
+    "text": "أبي أعرف اذا ضبطت أنا منبه [event_name : لرحلة] [timeofday : الصبح]"
+  },
+  {
+    "text": "هل [weather_descriptor : تمطر] في [place_name : عسير]"
+  },
+  {
+    "text": "هل سوف [weather_descriptor : تمطر] [date : اليوم]"
+  },
+  {
+    "text": "ماذا يحدث في [place_name : العالم]"
+  },
+  {
+    "text": "ماذا يحدث في [place_name : الرياض]"
+  },
+  {
+    "text": "اعرض لي شوية أخبار من [media_type : العربية]"
+  },
+  {
+    "text": "أظهر بعض الأخبار من [media_type : الجزيرة]"
+  }
+]

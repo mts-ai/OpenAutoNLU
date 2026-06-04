@@ -763,13 +763,12 @@ def apply_dq_filter_ner():
             or "labels" not in train_ds.column_names
         ):
             return
-        language = st.session_state.get("language", "en")
         records = []
         for row in train_ds:
             text = row["text"]
             tokens = row["tokens"]
             labels = row["labels"]
-            spans = convert_bio_to_spans(text, tokens, labels, language=language)
+            spans = convert_bio_to_spans(text, tokens, labels)
             records.append({"text": text, "spans": spans})
     elif indices and st.session_state.ner_train_data:
         records = [

@@ -1,0 +1,302 @@
+[
+  {
+    "text": "wake me up at [time : nine am] on [date : friday]"
+  },
+  {
+    "text": "set an alarm for [time : two hours from now]"
+  },
+  {
+    "text": "olly pause for [time : ten seconds]"
+  },
+  {
+    "text": "pause for [time : ten seconds]"
+  },
+  {
+    "text": "make the lighting bit more [color_type : warm] here"
+  },
+  {
+    "text": "please set the lighting [color_type : suitable for reading]"
+  },
+  {
+    "text": "turn off the light in the [house_place : bathroom]"
+  },
+  {
+    "text": "olly dim the lights in the [house_place : hall]"
+  },
+  {
+    "text": "turn the lights off in the [house_place : bedroom]"
+  },
+  {
+    "text": "set lights [change_amount : to twenty percent]"
+  },
+  {
+    "text": "olly set lights [change_amount : to twenty percent]"
+  },
+  {
+    "text": "dim the lights in the [house_place : kitchen] olly"
+  },
+  {
+    "text": "dim the lights in the [house_place : kitchen]"
+  },
+  {
+    "text": "olly clean the [house_place : flat]"
+  },
+  {
+    "text": "vacuum the [house_place : house]"
+  },
+  {
+    "text": "vacuum the [house_place : house] olly"
+  },
+  {
+    "text": "hoover the [house_place : carpets] around"
+  },
+  {
+    "text": "i want to listen [artist_name : arijit singh] song once again"
+  },
+  {
+    "text": "i want to play that [media_type : music] one again"
+  },
+  {
+    "text": "tell me the time in [place_name : moscow]"
+  },
+  {
+    "text": "tell me the time in [time_zone : g. m. t. plus five]"
+  },
+  {
+    "text": "olly list most rated [order_type : delivery] options for [food_type : chinese] food"
+  },
+  {
+    "text": "most rated [order_type : delivery] options for [food_type : chinese] food"
+  },
+  {
+    "text": "olly most rated [order_type : delivery] options for [food_type : chinese] food"
+  },
+  {
+    "text": "i want some [food_type : curry] to go any recommendations"
+  },
+  {
+    "text": "i want some [food_type : curry] to go any recommendations olly"
+  },
+  {
+    "text": "find my [food_type : thai] [order_type : takeaways] around [place_name : grassmarket]"
+  },
+  {
+    "text": "stop [time : seven am] alarm"
+  },
+  {
+    "text": "what's happening in [news_topic : football] [date : today]"
+  },
+  {
+    "text": "please play [song_name : yesterday] from [artist_name : beatles]"
+  },
+  {
+    "text": "i like [music_genre : rock] music"
+  },
+  {
+    "text": "my favorite music band is [artist_name : queen]"
+  },
+  {
+    "text": "please raise the lights [change_amount : to max]"
+  },
+  {
+    "text": "hey start [device_type : vacuum cleaner robot]"
+  },
+  {
+    "text": "turn [device_type : cleaner robot] on"
+  },
+  {
+    "text": "please order some [food_type : sushi] for [meal_type : dinner]"
+  },
+  {
+    "text": "hey i'd like you to order [food_type : burger]"
+  },
+  {
+    "text": "can i order [order_type : takeaway] [meal_type : dinner] from [business_name : byron's]"
+  },
+  {
+    "text": "does [business_name : byron's] supports [order_type : takeaways]"
+  },
+  {
+    "text": "set an alarm for [time : twelve]"
+  },
+  {
+    "text": "set an alarm [time : forty minutes from now]"
+  },
+  {
+    "text": "set alarm for [time : eight] [general_frequency : every weekday]"
+  },
+  {
+    "text": "is it [weather_descriptor : raining]"
+  },
+  {
+    "text": "is it going to [weather_descriptor : rain]"
+  },
+  {
+    "text": "is it currently [weather_descriptor : snowing]"
+  },
+  {
+    "text": "what's [date : this weeks] weather"
+  },
+  {
+    "text": "tell me [media_type : b. b. c.] news"
+  },
+  {
+    "text": "what's the news on [media_type : b. b. c.] news"
+  },
+  {
+    "text": "what is the [media_type : b. b. c.'s] latest news"
+  },
+  {
+    "text": "play [artist_name : daft punk]"
+  },
+  {
+    "text": "put on some [artist_name : coldplay]"
+  },
+  {
+    "text": "[player_setting : shuffle] this playlist"
+  },
+  {
+    "text": "tell me a [joke_type : good] joke"
+  },
+  {
+    "text": "tell me about [date : today]"
+  },
+  {
+    "text": "order a [food_type : pizza]"
+  },
+  {
+    "text": "order me a [food_type : byron] from [business_name : deliveroo]"
+  },
+  {
+    "text": "how long until my [order_type : takeaway]"
+  },
+  {
+    "text": "[business_name : domino's] [order_type : delivery] status"
+  },
+  {
+    "text": "play my [music_genre : jazz] playlist"
+  },
+  {
+    "text": "start my [music_genre : jazz] playlist"
+  },
+  {
+    "text": "i like [music_genre : jazz]"
+  },
+  {
+    "text": "can you play some [music_genre : jazz]"
+  },
+  {
+    "text": "enable [player_setting : shuffle]"
+  },
+  {
+    "text": "set brightness [change_amount : to fifty percent]"
+  },
+  {
+    "text": "set alarm at [time : ten am]"
+  },
+  {
+    "text": "tell me the latest [news_topic : technology] news"
+  },
+  {
+    "text": "tell me latest [news_topic : technology] news"
+  },
+  {
+    "text": "is it [weather_descriptor : raining] now"
+  },
+  {
+    "text": "turn on my [artist_name : michael jackson] playlist"
+  },
+  {
+    "text": "play [artist_name : michael jackson] from my playlist"
+  },
+  {
+    "text": "play [song_name : last song] from my favorite playlist"
+  },
+  {
+    "text": "turn on the [device_type : plug]"
+  },
+  {
+    "text": "switch on the [device_type : plug]"
+  },
+  {
+    "text": "turn on my [device_type : plug]"
+  },
+  {
+    "text": "does [food_type : dominoes] do [order_type : takeaway]"
+  },
+  {
+    "text": "does my favorite [food_type : pizza] place available for [order_type : takeaway]"
+  },
+  {
+    "text": "can i order [order_type : takeaway] from [food_type : spanish] place"
+  },
+  {
+    "text": "how's the weather like in [place_name : beijing]"
+  },
+  {
+    "text": "tell me the weather in [place_name : shanghai]"
+  },
+  {
+    "text": "please make the lights [color_type : reading friendly]"
+  },
+  {
+    "text": "please make the lights [color_type : watching friendly]"
+  },
+  {
+    "text": "make the [house_place : room] brighter"
+  },
+  {
+    "text": "what's date [date : today]"
+  },
+  {
+    "text": "what day is [date : today]"
+  },
+  {
+    "text": "is it [weather_descriptor : raining] outside olly"
+  },
+  {
+    "text": "change the lights into [color_type : green]"
+  },
+  {
+    "text": "clean the [house_place : floor] please"
+  },
+  {
+    "text": "turn on the [device_type : rice cooker socket]"
+  },
+  {
+    "text": "turn off the [device_type : rice cooker socket]"
+  },
+  {
+    "text": "could you please help me to order some [food_type : sushi] from [business_name : deliveroo]"
+  },
+  {
+    "text": "set an alarm for [time : four] in the [timeofday : afternoon]"
+  },
+  {
+    "text": "olly alert me at [time : three p. m.] to go to the [event_name : concert]"
+  },
+  {
+    "text": "alert me at [time : three p. m.] to go to the [event_name : concert]"
+  },
+  {
+    "text": "do i have an alarm set for [timeofday : morning] [event_name : flight]"
+  },
+  {
+    "text": "is it [weather_descriptor : raining] in [place_name : barcelona]"
+  },
+  {
+    "text": "will it [weather_descriptor : rain] [date : today]"
+  },
+  {
+    "text": "what's going on in the [place_name : world]"
+  },
+  {
+    "text": "what's happening in [place_name : cambridge]"
+  },
+  {
+    "text": "show me some news from [media_type : b. b. c.]"
+  },
+  {
+    "text": "olly show me some news from [media_type : b. b. c.]"
+  }
+]
