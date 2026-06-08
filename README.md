@@ -173,6 +173,31 @@ config_overrides = {
 }
 ```
 
+### Routing layer (method selection)
+
+By default the library auto-selects the training method (AncSetFit / SetFit /
+Finetuning) from the data. The optional **routing layer** reorganizes that
+decision into a declarative `profile → constraints → probes → recipe` pipeline
+that stays robust across domains, languages, and base models. It is fully
+backward compatible — `routing_mode` defaults to `legacy`.
+
+```python
+pipeline = TextClassificationTrainingPipeline(
+    train_path="train.csv",
+    config_overrides={
+        "language": "en",
+        "routing_mode": "compile_only",  # legacy | compile_only | full
+    },
+)
+pipeline.train()
+print(pipeline.execution_plan.recipe_id)   # selected recipe, persisted as execution_plan.json
+```
+
+Inspect a decision without training via `compile_plan` (see
+`examples/routing_compile.py`). Full details and the plugin system
+(`ood_sampling`, `augment`, `prompts`) are documented in
+[`docs/routing.md`](docs/routing.md).
+
 ### LLM Data Augmentation
 
 Automatically augment underrepresented classes using LLM generation. The `language` parameter controls which prompts are sent to the LLM (`"en"` for English, `"ru"` for Russian). For other languages, English prompts are used with an instruction to generate text in the language of the provided examples.
