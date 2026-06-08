@@ -40,7 +40,7 @@ from .models.onnx_wrappers import FinetunerOODWrapper
 from .onnx_inference_manager import (
     GeneralSequenceClassifierInferenceManager,
 )
-from .utils import GenericSequenceClassifierONNXExportMixin, GibberishDatasetGenerator
+from .utils import GenericSequenceClassifierONNXExportMixin
 
 logging.basicConfig()
 log = logging.getLogger(__name__)
@@ -93,8 +93,10 @@ class FinetunerWithOOD(FinetunerBase, GenericSequenceClassifierONNXExportMixin):
         return logits
 
     def _generate_synthetic_oos(self, num_train_rows: int) -> Dataset:
-        generator = GibberishDatasetGenerator(self.training_args.seed)
-        synthetic_texts = generator(num_rows=num_train_rows)
+        from ..plugins.ood_sampling import resolve_ood_sampler
+
+        sampler = resolve_ood_sampler(self.ood_sampler, self.training_args.seed)
+        synthetic_texts = sampler.sample(num_train_rows)
         synthetic_dataset = Dataset.from_dict(
             {"text": synthetic_texts, "label": [OOS_LABEL] * num_train_rows}
         )

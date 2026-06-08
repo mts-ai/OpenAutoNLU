@@ -19,6 +19,10 @@ class BaseMethodConfig:
         max_seq_length: Maximum sequence length for tokenization.
         dev_fraction: Fraction of training data to hold out as a dev set
             for early stopping and evaluation. Must be in (0, 1).
+        ood_sampler: Optional out-of-distribution sampler used to synthesize
+            out-of-scope examples. Accepts an ``OodSampler`` instance or a
+            registered plugin name (e.g. "gibberish"). When None, the legacy
+            gibberish generator is used (backward compatible).
     """
 
     model_name_or_path: Optional[str] = None
@@ -26,6 +30,7 @@ class BaseMethodConfig:
     tokenizer_kwargs: Optional[Dict[str, Any]] = None
     max_seq_length: int = 512
     dev_fraction: float = 0.1
+    ood_sampler: Optional[Any] = None
 
     def __post_init__(self) -> None:
         if self.model_name_or_path is None:

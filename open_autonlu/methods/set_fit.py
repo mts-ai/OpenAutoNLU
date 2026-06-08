@@ -41,7 +41,7 @@ from .onnx_inference_manager import (
 )
 from .utils import GenericSequenceClassifierONNXExportMixin
 from .constants import BATCH_SIZE
-from .utils import batch as batcher, GibberishDatasetGenerator
+from .utils import batch as batcher
 
 log = logging.getLogger(__name__)
 
@@ -91,6 +91,7 @@ class SetFitMethodBase(
         self.num_iterations = config.num_iterations
         self.model.model_body.tokenizer.model_max_length = config.max_seq_length  # hardcoded for russian encoders, that lack their own model_max_length parameter
         self.seed = config.seed
+        self.ood_sampler = config.ood_sampler
         self.batch_size = config.batch_size
         set_seed(config.seed)
 
@@ -106,8 +107,10 @@ class SetFitMethodBase(
         self._id2label = value
 
     def _generate_synthetic_oos(self, num_train_rows: int) -> Dataset:
-        generator = GibberishDatasetGenerator(self.seed)
-        synthetic_texts = generator(num_rows=num_train_rows)
+        from ..plugins.ood_sampling import resolve_ood_sampler
+
+        sampler = resolve_ood_sampler(self.ood_sampler, self.seed)
+        synthetic_texts = sampler.sample(num_train_rows)
         synthetic_dataset = Dataset.from_dict(
             {"text": synthetic_texts, "label": [OOS_LABEL] * num_train_rows}
         )
