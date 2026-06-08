@@ -1,0 +1,16 @@
+# Mirrors OOD_METHOD_MAP["ancsetfit"] -> AncSetFitMethod
+# NOTE (legacy parity): the current OOD_METHOD_MAP maps the ancsetfit family to
+# AncSetFitMethod (NOT AncSetFitOOD). This reproduces that behavior verbatim so
+# Phase 0 is a true parity baseline. Routing to AncSetFitOOD is a deliberate
+# behavior change scheduled for Phase 6 (documented in CHANGELOG).
+id: anc_setfit_ood
+method_family: ancsetfit
+trainer: AncSetFitMethod
+ood: true
+ood_scorer_default: null
+cost_tier: low
+min_class_size: 2         # MIN_ANC_SET_FIT_SIZE (2) <= n_min <= MAX_ANC_SET_FIT_SIZE (5)
+max_class_size: 5
+requires_anc_label: true
+requires:
+  ood_policy: [detector]

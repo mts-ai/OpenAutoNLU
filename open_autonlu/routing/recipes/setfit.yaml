@@ -1,0 +1,12 @@
+# Mirrors NO_OOD_METHOD_MAP["setfit"] -> SetFitMethod
+id: setfit
+method_family: setfit
+trainer: SetFitMethod
+ood: false
+ood_scorer_default: null
+cost_tier: low
+min_class_size: 6         # MAX_ANC_SET_FIT_SIZE (5) < n_min <= MAX_SET_FIT_SIZE (80)
+max_class_size: 80
+requires_anc_label: false
+requires:
+  ood_policy: [none, logit_class]

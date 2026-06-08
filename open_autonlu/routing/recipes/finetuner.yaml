@@ -1,0 +1,14 @@
+# Mirrors NO_OOD_METHOD_MAP["finetuning"] -> Finetuner
+id: finetuner
+method_family: finetuning
+trainer: Finetuner
+ood: false
+ood_scorer_default: null
+cost_tier: high
+min_class_size: 81        # n_min > MAX_SET_FIT_SIZE (80)
+max_class_size: null
+requires_anc_label: false
+requires:
+  ood_policy: [none, logit_class]
+components:
+  augmentation: [none, char_noise]
