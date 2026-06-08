@@ -122,6 +122,10 @@ class AbstractTrainingPipeline(ABC):
         self._domain_desc: Optional[str] = None
         self._label_descriptions: Optional[Dict[str, str]] = None
         self._log = logging.getLogger(self.__class__.__name__)
+        # Routing layer (arch_suggestion.md). Populated during method resolution
+        # when a non-legacy routing_mode is used; persisted alongside the model.
+        self.execution_plan = None
+        self._recipe_registry_cache = None
 
     def evaluate_training_data(self) -> DatasetEvaluatorOutput:
         """Evaluate training data quality using configured evaluators.
@@ -190,6 +194,50 @@ class AbstractTrainingPipeline(ABC):
         if method_kwargs.get("ood_method") == OodMethod.AUTO:
             method_kwargs.pop("ood_method")
         return method_kwargs
+
+    def _routing_mode(self) -> str:
+        """Resolve the routing mode from config overrides (default 'legacy')."""
+        if self.config_overrides:
+            return self.config_overrides.get("routing_mode", "legacy")
+        return "legacy"
+
+    def _build_execution_plan(self, method_name: str, ood_method):
+        """Build a serializable ExecutionPlan from a resolved legacy decision.
+
+        The plan mirrors the legacy ``(method_name, ood_method)`` choice exactly
+        (its ``trainer`` equals the class the legacy maps would select), so it is
+        safe to both persist it and resolve the method class through it.
+        Returns None if the routing layer cannot map the decision.
+        """
+        try:
+            from ..routing.execution_plan import ExecutionPlan
+            from ..routing.legacy_adapter import is_ood_enabled
+            from ..routing.registry import RecipeRegistry
+        except Exception as exc:  # pragma: no cover - routing always available
+            self._log.warning("Routing layer unavailable: %s", exc)
+            return None
+
+        if self._recipe_registry_cache is None:
+            self._recipe_registry_cache = RecipeRegistry.load()
+        try:
+            recipe = self._recipe_registry_cache.find(
+                method_family=method_name, ood=is_ood_enabled(ood_method)
+            )
+        except KeyError:
+            return None
+
+        components = {"trainer": recipe.trainer, "method_family": recipe.method_family}
+        if recipe.ood_scorer_default:
+            components["ood_scorer"] = recipe.ood_scorer_default
+        for key, value in recipe.components.items():
+            components.setdefault(key, value)
+        model_id = (self.config_overrides or {}).get("model_name_or_path")
+        return ExecutionPlan(
+            recipe_id=recipe.id,
+            model_id=model_id,
+            components=components,
+            notes={"routing_mode": self._routing_mode()},
+        )
 
     @abstractmethod
     def diagnose(self) -> Optional[DatasetEvaluatorOutput]:
@@ -299,6 +347,11 @@ class AbstractTrainingPipeline(ABC):
                 },
                 f,
             )
+        if getattr(self, "execution_plan", None) is not None:
+            try:
+                self.execution_plan.save(path_to_package + "/execution_plan.json")
+            except Exception as exc:  # pragma: no cover - best-effort persistence
+                self._log.warning("Failed to save execution plan: %s", exc)
 
 
 class AbstractInferencePipeline(ABC):

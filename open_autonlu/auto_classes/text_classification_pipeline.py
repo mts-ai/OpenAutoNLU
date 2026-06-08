@@ -159,10 +159,31 @@ class TextClassificationTrainingPipeline(AbstractTrainingPipeline):
             # ood_method is not specified
             ood_method = OodMethod.AUTO
 
+        # Record a serializable execution plan for this decision (persisted with
+        # the model). Built from the legacy choice, so it is parity-preserving.
+        self.execution_plan = self._build_execution_plan(method_name, ood_method)
+
+        routing_mode = self._routing_mode()
+        if routing_mode == "legacy":
+            if ood_method in (OodMethod.NONE, OodMethod.LOGIT):
+                return (
+                    get_method_from_string(NO_OOD_METHOD_MAP[method_name]),
+                    training_data,
+                )
+            return get_method_from_string(OOD_METHOD_MAP[method_name]), training_data
+
+        # compile_only / full: resolve the method class through the execution
+        # plan. This yields a provably identical class to the legacy path while
+        # routing the decision through the new layer.
+        if self.execution_plan is not None:
+            from ..routing.legacy_adapter import to_method_and_data
+
+            return to_method_and_data(self.execution_plan, training_data)
+
+        # Fallback (routing layer unavailable): legacy behavior.
         if ood_method in (OodMethod.NONE, OodMethod.LOGIT):
             return get_method_from_string(NO_OOD_METHOD_MAP[method_name]), training_data
-        else:
-            return get_method_from_string(OOD_METHOD_MAP[method_name]), training_data
+        return get_method_from_string(OOD_METHOD_MAP[method_name]), training_data
 
     def train(self) -> methods.data_types.TrainingArtifactInfo:
         """Train the text classification model.
