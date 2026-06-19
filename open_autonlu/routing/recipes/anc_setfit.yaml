@@ -1,0 +1,15 @@
+# Few-shot anchor-based SetFit (no OOD detector).
+id: anc_setfit
+method_family: ancsetfit
+trainer: AncSetFitMethod
+ood: false
+ood_scorer_default: null
+cost_tier: low
+requires_anc_label: true
+requires:
+  ood_policy: [none, logit_class]
+probe:
+  probe_type: few_shot_knn
+  n_shot: 2
+data_prep:
+  downsample_to: 5

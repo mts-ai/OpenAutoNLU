@@ -31,7 +31,6 @@ from .onnx_inference_manager import (
     GeneralSequenceClassifierInferenceManager,
 )
 from .set_fit import SetFitMethodBase
-from .utils import GibberishDatasetGenerator
 
 log = logging.getLogger(__name__)
 
@@ -81,8 +80,10 @@ class SetFitOOD(SetFitMethodBase):
         self._id2label = value
 
     def _generate_synthetic_oos(self, num_train_rows: int) -> Dataset:
-        generator = GibberishDatasetGenerator(self.seed)
-        synthetic_texts = generator(num_rows=num_train_rows)
+        from ..plugins.ood_sampling import resolve_ood_sampler
+
+        sampler = resolve_ood_sampler(self.ood_sampler, self.seed)
+        synthetic_texts = sampler.sample(num_train_rows)
         synthetic_dataset = Dataset.from_dict(
             {"text": synthetic_texts, "label": [OOS_LABEL] * num_train_rows}
         )

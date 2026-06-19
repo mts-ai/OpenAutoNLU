@@ -1,0 +1,17 @@
+# SetFit with MSP OOD detector.
+id: setfit_ood
+method_family: setfit
+trainer: SetFitOOD
+ood: true
+ood_scorer_default: msp
+cost_tier: low
+requires_anc_label: false
+requires:
+  ood_policy: [detector]
+components:
+  ood_sampler: gibberish
+probe:
+  probe_type: knn
+  n_neighbors: 5
+data_prep:
+  downsample_to: 80

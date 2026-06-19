@@ -1,0 +1,14 @@
+# Full finetuning (no OOD detector).
+id: finetuner
+method_family: finetuning
+trainer: Finetuner
+ood: false
+ood_scorer_default: null
+cost_tier: high
+requires_anc_label: false
+requires:
+  ood_policy: [none, logit_class]
+components:
+  augmentation: [none, char_noise]
+probe:
+  probe_type: linear

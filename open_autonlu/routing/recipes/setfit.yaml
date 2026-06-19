@@ -1,0 +1,15 @@
+# SetFit few-shot (no OOD detector).
+id: setfit
+method_family: setfit
+trainer: SetFitMethod
+ood: false
+ood_scorer_default: null
+cost_tier: low
+requires_anc_label: false
+requires:
+  ood_policy: [none, logit_class]
+probe:
+  probe_type: knn
+  n_neighbors: 5
+data_prep:
+  downsample_to: 80

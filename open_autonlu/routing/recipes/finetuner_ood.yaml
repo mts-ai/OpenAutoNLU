@@ -1,0 +1,15 @@
+# Finetuning with Mahalanobis OOD detector.
+id: finetuner_ood
+method_family: finetuning
+trainer: FinetunerWithOOD
+ood: true
+ood_scorer_default: mahalanobis
+cost_tier: high
+requires_anc_label: false
+requires:
+  ood_policy: [detector]
+components:
+  ood_sampler: gibberish
+  augmentation: [none, char_noise]
+probe:
+  probe_type: linear

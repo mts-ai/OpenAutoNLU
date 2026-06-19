@@ -1,0 +1,15 @@
+# Anchor-based SetFit with OOD detector wiring.
+id: anc_setfit_ood
+method_family: ancsetfit
+trainer: AncSetFitMethod
+ood: true
+ood_scorer_default: null
+cost_tier: low
+requires_anc_label: true
+requires:
+  ood_policy: [detector]
+probe:
+  probe_type: few_shot_knn
+  n_shot: 2
+data_prep:
+  downsample_to: 5

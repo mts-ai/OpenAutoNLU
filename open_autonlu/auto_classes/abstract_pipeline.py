@@ -122,6 +122,10 @@ class AbstractTrainingPipeline(ABC):
         self._domain_desc: Optional[str] = None
         self._label_descriptions: Optional[Dict[str, str]] = None
         self._log = logging.getLogger(self.__class__.__name__)
+        # Routing layer (arch_suggestion.md). Populated during method resolution
+        # when a non-legacy routing_mode is used; persisted alongside the model.
+        self.execution_plan = None
+        self._recipe_registry_cache = None
 
     def evaluate_training_data(self) -> DatasetEvaluatorOutput:
         """Evaluate training data quality using configured evaluators.
@@ -190,6 +194,36 @@ class AbstractTrainingPipeline(ABC):
         if method_kwargs.get("ood_method") == OodMethod.AUTO:
             method_kwargs.pop("ood_method")
         return method_kwargs
+
+    def _build_task_spec(self):
+        """Build a :class:`TaskSpec` from pipeline config overrides."""
+        from ..methods.data_types import OodMethod
+        from ..routing.ood_policy import ood_method_to_policy
+        from ..routing.task_spec import ModelConfig, TaskSpec
+
+        overrides = self.config_overrides or {}
+        try:
+            ood_method = overrides.get("ood_method", OodMethod.AUTO)
+        except KeyError:
+            ood_method = OodMethod.AUTO
+
+        return TaskSpec(
+            task_type=getattr(self, "task_type", "multiclass_classification"),
+            ood_policy=ood_method_to_policy(ood_method),
+            language=getattr(self, "language", "en"),
+            model=ModelConfig(encoder=overrides.get("model_name_or_path")),
+            constraints={
+                k: v
+                for k, v in overrides.items()
+                if k in ("recipe_id", "routing_mode")
+            },
+        )
+
+    def _routing_mode(self) -> str:
+        """Routing always uses the empirical compiler path."""
+        if self.config_overrides:
+            return self.config_overrides.get("routing_mode", "full")
+        return "full"
 
     @abstractmethod
     def diagnose(self) -> Optional[DatasetEvaluatorOutput]:
@@ -299,6 +333,11 @@ class AbstractTrainingPipeline(ABC):
                 },
                 f,
             )
+        if getattr(self, "execution_plan", None) is not None:
+            try:
+                self.execution_plan.save(path_to_package + "/execution_plan.json")
+            except Exception as exc:  # pragma: no cover - best-effort persistence
+                self._log.warning("Failed to save execution plan: %s", exc)
 
 
 class AbstractInferencePipeline(ABC):

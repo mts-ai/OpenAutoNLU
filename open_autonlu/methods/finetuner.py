@@ -50,7 +50,6 @@ from .data_types import (
 from .hyp_search_mixin import FinetuningHyperparameterSearchMixin
 from .method import SequenceClassificationMethod
 from .onnx_inference_manager import AbstractONNXInferenceManager
-from .utils import GibberishDatasetGenerator
 
 log = logging.getLogger(__name__)
 
@@ -91,6 +90,7 @@ class FinetunerBase(SequenceClassificationMethod, FinetuningHyperparameterSearch
         self.num_hpo_trials = config.num_hpo_trials
         self.training_args = config.training_arguments
         self.seed = self.training_args.seed
+        self.ood_sampler = config.ood_sampler
         self.ood_method = config.ood_method
 
         self.training_args = replace(
@@ -179,8 +179,10 @@ class FinetunerBase(SequenceClassificationMethod, FinetuningHyperparameterSearch
         )
 
     def _generate_synthetic_oos(self, num_train_rows: int) -> Dataset:
-        generator = GibberishDatasetGenerator(self.training_args.seed)
-        synthetic_texts = generator(num_rows=num_train_rows)
+        from ..plugins.ood_sampling import resolve_ood_sampler
+
+        sampler = resolve_ood_sampler(self.ood_sampler, self.training_args.seed)
+        synthetic_texts = sampler.sample(num_train_rows)
         synthetic_dataset = Dataset.from_dict(
             {"text": synthetic_texts, "label": [OOS_LABEL] * num_train_rows}
         )
