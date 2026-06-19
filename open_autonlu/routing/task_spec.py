@@ -23,7 +23,7 @@ VALID_OOD_POLICIES = frozenset(
     {OOD_POLICY_NONE, OOD_POLICY_LOGIT_CLASS, OOD_POLICY_DETECTOR}
 )
 
-# Routing modes (mirrors arch_suggestion.md migration story).
+# Routing modes (legacy values accepted but ignored; empirical path only).
 ROUTING_MODE_LEGACY = "legacy"
 ROUTING_MODE_COMPILE_ONLY = "compile_only"
 ROUTING_MODE_FULL = "full"
@@ -43,7 +43,7 @@ class ObjectiveWeights:
     in_scope_f1: float = 1.0
     ood_recall_close: float = 0.0
     ood_recall_far: float = 0.0
-    train_cost: float = 0.0
+    train_cost: float = 0.05
     variance: float = 0.0
 
     def as_dict(self) -> Dict[str, float]:
@@ -67,9 +67,9 @@ class BudgetPolicy:
         max_train_minutes: Optional hard cap surfaced to the constraint engine.
     """
 
-    skip_probes: bool = True
+    skip_probes: bool = False
     max_probe_minutes: float = 10.0
-    max_candidates: int = 3
+    max_candidates: int = 6
     max_train_minutes: Optional[float] = None
 
 
@@ -98,7 +98,7 @@ class TaskSpec:
     language: str = "auto"
     model: ModelConfig = field(default_factory=ModelConfig)
     budget: BudgetPolicy = field(default_factory=BudgetPolicy)
-    routing_mode: str = ROUTING_MODE_LEGACY
+    routing_mode: str = ROUTING_MODE_FULL
     constraints: Dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:

@@ -1,9 +1,8 @@
 """PlanScorer: multi-objective selection over probed candidates.
 
-Combines the empirical probe signal (in-scope F1, OOD score) with structural
-priors (data-regime fit, cost tier). The objective weights come from
-``TaskSpec.objective``. Returns the winning plan plus the score margin to the
-runner-up (used as ``ExecutionPlan.selection_margin``).
+Combines empirical probe signals (in-scope F1, OOD score) with the user
+objective (cost penalty). Selection is probe-driven only -- no sample-count
+regime bonuses.
 """
 
 from __future__ import annotations
@@ -17,9 +16,6 @@ from .recipe import Recipe
 # Normalized cost penalty per recipe tier.
 DEFAULT_COST_MAP: Dict[str, float] = {"low": 0.0, "medium": 0.5, "high": 1.0}
 
-# Small structural bonus for a recipe whose declared regime fits the data.
-REGIME_FIT_BONUS = 0.1
-
 
 @dataclass
 class ScoredPlan:
@@ -31,17 +27,13 @@ class ScoredPlan:
 class PlanScorer:
     """Scores and ranks candidate plans for a given objective."""
 
-    def __init__(
-        self,
-        cost_map: Optional[Dict[str, float]] = None,
-        regime_fit_bonus: float = REGIME_FIT_BONUS,
-    ):
+    def __init__(self, cost_map: Optional[Dict[str, float]] = None):
         self.cost_map = cost_map or DEFAULT_COST_MAP
-        self.regime_fit_bonus = regime_fit_bonus
 
     def score_one(
         self, recipe: Recipe, result: ProbeResult, objective, profile=None
     ) -> float:
+        del profile  # kept for API compatibility; not used for scoring
         f1 = result.in_scope_f1 or 0.0
         score = objective.in_scope_f1 * f1
 
@@ -49,11 +41,6 @@ class PlanScorer:
             ood_weight = objective.ood_recall_close + objective.ood_recall_far
             score += ood_weight * result.ood_score
 
-        # Structural prior: prefer a recipe whose regime matches the data.
-        if profile is not None and recipe.matches_class_size(profile.min_class_size):
-            score += self.regime_fit_bonus
-
-        # Cost penalty.
         score -= objective.train_cost * self.cost_map.get(recipe.cost_tier, 0.5)
         return score
 

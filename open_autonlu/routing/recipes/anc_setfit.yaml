@@ -1,12 +1,15 @@
-# Mirrors NO_OOD_METHOD_MAP["ancsetfit"] -> AncSetFitMethod
+# Few-shot anchor-based SetFit (no OOD detector).
 id: anc_setfit
 method_family: ancsetfit
 trainer: AncSetFitMethod
 ood: false
 ood_scorer_default: null
 cost_tier: low
-min_class_size: 2         # MIN_ANC_SET_FIT_SIZE (2) <= n_min <= MAX_ANC_SET_FIT_SIZE (5)
-max_class_size: 5
 requires_anc_label: true
 requires:
   ood_policy: [none, logit_class]
+probe:
+  probe_type: few_shot_knn
+  n_shot: 2
+data_prep:
+  downsample_to: 5

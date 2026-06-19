@@ -178,15 +178,16 @@ config_overrides = {
 By default the library auto-selects the training method (AncSetFit / SetFit /
 Finetuning) from the data. The optional **routing layer** reorganizes that
 decision into a declarative `profile → constraints → probes → recipe` pipeline
-that stays robust across domains, languages, and base models. It is fully
-backward compatible — `routing_mode` defaults to `legacy`.
+that stays robust across domains, languages, and base models. Method selection
+is **empirical** (encoder probes), not sample-count heuristics.
 
 ```python
 pipeline = TextClassificationTrainingPipeline(
     train_path="train.csv",
     config_overrides={
         "language": "en",
-        "routing_mode": "compile_only",  # legacy | compile_only | full
+        "model_name_or_path": "bert-base-uncased",
+        # optional pin: "recipe_id": "setfit",
     },
 )
 pipeline.train()

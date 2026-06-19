@@ -1,14 +1,7 @@
-"""compile_plan: profile -> constraints -> (probes) -> ExecutionPlan.
+"""compile_plan: profile -> constraints -> probes -> ExecutionPlan.
 
-Three routing modes (from ``TaskSpec.routing_mode``):
-
-- ``legacy`` / ``compile_only``: deterministic *parity* path. Reproduces the
-  existing resolver's decision exactly (via ``legacy_adapter``), then wraps it in
-  an ExecutionPlan. Used to validate the new pipeline against the old one.
-- ``full``: empirical path. Filters recipes by constraints, probes the top-K, and
-  selects with the PlanScorer. May diverge from legacy -- that's the point.
-
-The compiler is additive: nothing calls it until Phase 6 wires the pipeline.
+Runs empirical recipe selection: hard constraints filter candidates, encoder
+probes score each survivor, and the plan scorer picks the winner.
 """
 
 from __future__ import annotations
@@ -19,18 +12,11 @@ from typing import Any, Optional
 from .constraints import ConstraintEngine
 from .dataset_profile import extract_dataset_profile
 from .execution_plan import ExecutionPlan, hash_profile
-from .legacy_adapter import resolve_method_family
 from .plan_scorer import PlanScorer
 from .probe_runner import ProbeContext, ProbeRunner
 from .recipe import Recipe
 from .registry import RecipeRegistry
-from .task_spec import (
-    OOD_POLICY_DETECTOR,
-    ROUTING_MODE_COMPILE_ONLY,
-    ROUTING_MODE_FULL,
-    ROUTING_MODE_LEGACY,
-    TaskSpec,
-)
+from .task_spec import TaskSpec
 
 log = logging.getLogger(__name__)
 
@@ -73,21 +59,23 @@ def compile_plan(
     probe_runner: Optional[ProbeRunner] = None,
     plan_scorer: Optional[PlanScorer] = None,
     compiled_at: Optional[str] = None,
+    user_overrides: Optional[dict] = None,
 ) -> ExecutionPlan:
     """Compile a routing decision into an :class:`ExecutionPlan`.
 
     Args:
         dataset: labeled data (``datasets.Dataset`` or ``pandas.DataFrame``).
-        task_spec: routing intent; ``routing_mode`` selects the path.
+        task_spec: routing intent and objective weights.
         model_config: encoder config (defaults to ``task_spec.model``).
-        min_class_size / has_anc_label: override the values derived from the
-            DatasetProfile (used by the pipeline to pass post-resampling counts).
-        embedder: inject an Embedder for the probe stage (``full`` mode).
+        min_class_size / has_anc_label: override values from DatasetProfile.
+        embedder: inject an Embedder for encoder probes.
         probe_runner / plan_scorer: inject for testing or custom strategies.
+        user_overrides: explicit pins (e.g. ``recipe_id``).
     """
     task_spec = task_spec or TaskSpec()
     registry = registry or RecipeRegistry.load()
     model_config = model_config if model_config is not None else task_spec.model
+    user_overrides = user_overrides or {}
 
     profile = extract_dataset_profile(dataset, task_spec)
     if min_class_size is None:
@@ -96,29 +84,24 @@ def compile_plan(
         has_anc_label = profile.has_anc_label
     profile_hash = hash_profile(profile.to_dict())
 
-    mode = task_spec.routing_mode
-
-    # ---- Parity path (legacy / compile_only) -------------------------------
-    if mode in (ROUTING_MODE_LEGACY, ROUTING_MODE_COMPILE_ONLY):
-        ood_enabled = task_spec.ood_policy == OOD_POLICY_DETECTOR
-        family = resolve_method_family(min_class_size, has_anc_label)
-        recipe = registry.find(method_family=family, ood=ood_enabled)
+    pinned = user_overrides.get("recipe_id")
+    if pinned is not None:
+        recipe = registry.get(pinned)
         return _build_plan(
             recipe,
             model_config,
             profile_hash,
             compiled_at,
-            notes={"routing_mode": mode},
+            notes={"selection": "pinned", "recipe_id": pinned},
         )
-
-    # ---- Empirical path (full) ---------------------------------------------
-    if mode != ROUTING_MODE_FULL:
-        raise ValueError(f"Unknown routing_mode '{mode}'.")
 
     candidates = [
         sr.recipe
         for sr in ConstraintEngine(registry).filter(
-            task_spec, min_class_size=min_class_size, has_anc_label=has_anc_label
+            task_spec,
+            min_class_size=min_class_size,
+            has_anc_label=has_anc_label,
+            user_overrides=user_overrides,
         )
     ]
     if not candidates:
@@ -131,7 +114,7 @@ def compile_plan(
         from .capability_profile import extract_capability_profile
 
         capability = extract_capability_profile(
-            dataset, model_config, embedder=embedder
+            dataset, model_config, embedder=embedder, budget=task_spec.budget
         )
 
     ctx = ProbeContext(
@@ -139,6 +122,7 @@ def compile_plan(
         profile=profile,
         capability=capability,
         model_config=model_config,
+        embedder=embedder,
     )
     runner = probe_runner or ProbeRunner()
     results = runner.run_many(candidates, ctx)
@@ -152,7 +136,10 @@ def compile_plan(
         model_config,
         profile_hash,
         compiled_at,
-        notes={"routing_mode": ROUTING_MODE_FULL, "n_candidates": len(candidates)},
+        notes={
+            "n_candidates": len(candidates),
+            "ood_policy": task_spec.ood_policy,
+        },
         probe_scores={res.recipe_id: res.to_dict() for res in results},
         selection_margin=margin,
     )

@@ -58,6 +58,51 @@ def knn_macro_f1(
     return stratified_cv_macro_f1(X, y, clf, seed=seed, max_folds=max_folds)
 
 
+def few_shot_knn_macro_f1(
+    X: np.ndarray,
+    y: Sequence,
+    *,
+    n_shot: int = 5,
+    seed: int = 42,
+    max_folds: int = 3,
+    n_neighbors: int = 1,
+) -> Optional[float]:
+    """Few-shot kNN: each train fold uses at most ``n_shot`` samples per class."""
+    y = np.asarray(y)
+    classes, counts = np.unique(y, return_counts=True)
+    if len(classes) < 2 or int(counts.min()) < 2:
+        return None
+    min_count = int(counts.min())
+    folds = min(max_folds, min_count)
+    skf = StratifiedKFold(n_splits=folds, shuffle=True, random_state=seed)
+    scores = []
+    k = max(1, min(n_neighbors, n_shot))
+    for train_idx, test_idx in skf.split(X, y):
+        shot_global: list[int] = []
+        y_train = y[train_idx]
+        for cls in np.unique(y_train):
+            cls_idx = train_idx[y_train == cls]
+            if len(cls_idx) > n_shot:
+                rng = np.random.RandomState(seed)
+                cls_idx = rng.choice(cls_idx, size=n_shot, replace=False)
+            shot_global.extend(cls_idx)
+        shot_global = np.array(sorted(set(shot_global)))
+        X_shot = X[shot_global]
+        y_shot = y[shot_global]
+        if len(np.unique(y_shot)) < 2:
+            continue
+        k_fit = max(1, min(k, len(y_shot) - 1))
+        clf = KNeighborsClassifier(n_neighbors=k_fit)
+        clf.fit(X_shot, y_shot)
+        pred = clf.predict(X[test_idx])
+        from sklearn.metrics import f1_score
+
+        scores.append(float(f1_score(y[test_idx], pred, average="macro")))
+    if not scores:
+        return None
+    return float(np.mean(scores))
+
+
 def bucket(value: Optional[float], low_hi: float, med_hi: float) -> str:
     """Map a continuous value to a relative label.
 

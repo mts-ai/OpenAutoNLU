@@ -195,49 +195,35 @@ class AbstractTrainingPipeline(ABC):
             method_kwargs.pop("ood_method")
         return method_kwargs
 
-    def _routing_mode(self) -> str:
-        """Resolve the routing mode from config overrides (default 'legacy')."""
-        if self.config_overrides:
-            return self.config_overrides.get("routing_mode", "legacy")
-        return "legacy"
+    def _build_task_spec(self):
+        """Build a :class:`TaskSpec` from pipeline config overrides."""
+        from ..methods.data_types import OodMethod
+        from ..routing.ood_policy import ood_method_to_policy
+        from ..routing.task_spec import ModelConfig, TaskSpec
 
-    def _build_execution_plan(self, method_name: str, ood_method):
-        """Build a serializable ExecutionPlan from a resolved legacy decision.
-
-        The plan mirrors the legacy ``(method_name, ood_method)`` choice exactly
-        (its ``trainer`` equals the class the legacy maps would select), so it is
-        safe to both persist it and resolve the method class through it.
-        Returns None if the routing layer cannot map the decision.
-        """
+        overrides = self.config_overrides or {}
         try:
-            from ..routing.execution_plan import ExecutionPlan
-            from ..routing.legacy_adapter import is_ood_enabled
-            from ..routing.registry import RecipeRegistry
-        except Exception as exc:  # pragma: no cover - routing always available
-            self._log.warning("Routing layer unavailable: %s", exc)
-            return None
-
-        if self._recipe_registry_cache is None:
-            self._recipe_registry_cache = RecipeRegistry.load()
-        try:
-            recipe = self._recipe_registry_cache.find(
-                method_family=method_name, ood=is_ood_enabled(ood_method)
-            )
+            ood_method = overrides.get("ood_method", OodMethod.AUTO)
         except KeyError:
-            return None
+            ood_method = OodMethod.AUTO
 
-        components = {"trainer": recipe.trainer, "method_family": recipe.method_family}
-        if recipe.ood_scorer_default:
-            components["ood_scorer"] = recipe.ood_scorer_default
-        for key, value in recipe.components.items():
-            components.setdefault(key, value)
-        model_id = (self.config_overrides or {}).get("model_name_or_path")
-        return ExecutionPlan(
-            recipe_id=recipe.id,
-            model_id=model_id,
-            components=components,
-            notes={"routing_mode": self._routing_mode()},
+        return TaskSpec(
+            task_type=getattr(self, "task_type", "multiclass_classification"),
+            ood_policy=ood_method_to_policy(ood_method),
+            language=getattr(self, "language", "en"),
+            model=ModelConfig(encoder=overrides.get("model_name_or_path")),
+            constraints={
+                k: v
+                for k, v in overrides.items()
+                if k in ("recipe_id", "routing_mode")
+            },
         )
+
+    def _routing_mode(self) -> str:
+        """Routing always uses the empirical compiler path."""
+        if self.config_overrides:
+            return self.config_overrides.get("routing_mode", "full")
+        return "full"
 
     @abstractmethod
     def diagnose(self) -> Optional[DatasetEvaluatorOutput]:

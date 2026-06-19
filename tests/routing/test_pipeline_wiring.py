@@ -1,9 +1,6 @@
-"""Phase 6: routing wired into TextClassificationTrainingPipeline.
+"""Phase 6: routing wired into TextClassificationTrainingPipeline."""
 
-Exercises method resolution (no model training) to prove compile_only resolves
-the same Method class as legacy and that an ExecutionPlan is produced/persisted.
-"""
-
+import numpy as np
 import pandas as pd
 import pytest
 
@@ -28,64 +25,69 @@ def _pipeline(tmp_path, overrides):
     )
 
 
-def test_routing_mode_default_is_legacy(tmp_path):
+class SeparableStub:
+    def encode(self, texts):
+        labels = [t.split()[0] for t in texts]
+        uniq = sorted(set(labels))
+        idx = {c: i for i, c in enumerate(uniq)}
+        X = np.zeros((len(texts), len(uniq)), dtype=np.float32)
+        for r, lab in enumerate(labels):
+            X[r, idx[lab]] = 1.0
+        return X
+
+
+@pytest.fixture(autouse=True)
+def _stub_encoder_probe(monkeypatch):
+    """Avoid loading HF weights in pipeline routing tests."""
+
+    def _fake_compile(dataset, task_spec=None, **kwargs):
+        kwargs.setdefault("embedder", SeparableStub())
+        from open_autonlu.routing.compiler import compile_plan as real_compile
+
+        return real_compile(dataset, task_spec, **kwargs)
+
+    monkeypatch.setattr(
+        "open_autonlu.auto_classes.text_classification_pipeline.compile_plan",
+        _fake_compile,
+    )
+
+
+def test_routing_mode_default_is_full(tmp_path):
     p = _pipeline(tmp_path, {"language": "en"})
-    assert p._routing_mode() == "legacy"
-
-
-def test_routing_mode_override(tmp_path):
-    p = _pipeline(tmp_path, {"language": "en", "routing_mode": "compile_only"})
-    assert p._routing_mode() == "compile_only"
+    assert p._routing_mode() == "full"
 
 
 @pytest.mark.parametrize(
     "ood_method,expected_cls",
     [
-        (OodMethod.NONE, "Finetuner"),
-        (OodMethod.AUTO, "FinetunerWithOOD"),
-        (OodMethod.LOGIT, "Finetuner"),
+        (OodMethod.NONE, "SetFitMethod"),
+        (OodMethod.AUTO, "SetFitOOD"),
+        (OodMethod.LOGIT, "SetFitMethod"),
     ],
 )
-def test_compile_only_resolves_same_class_as_legacy(tmp_path, ood_method, expected_cls):
-    legacy = _pipeline(tmp_path, {"language": "en", "ood_method": ood_method})
-    legacy_cls, _ = legacy._synergize_data_and_method()
-
-    routed = _pipeline(
-        tmp_path,
-        {"language": "en", "ood_method": ood_method, "routing_mode": "compile_only"},
-    )
+def test_routing_resolves_method_class(tmp_path, ood_method, expected_cls):
+    routed = _pipeline(tmp_path, {"language": "en", "ood_method": ood_method})
     routed_cls, _ = routed._synergize_data_and_method()
-
-    assert legacy_cls is routed_cls
-    assert legacy_cls.__name__ == expected_cls
+    assert routed_cls.__name__ == expected_cls
 
 
 def test_execution_plan_populated(tmp_path):
-    p = _pipeline(
-        tmp_path,
-        {"language": "en", "ood_method": OodMethod.NONE, "routing_mode": "compile_only"},
-    )
-    p._synergize_data_and_method()
-    assert isinstance(p.execution_plan, ExecutionPlan)
-    assert p.execution_plan.recipe_id == "finetuner"
-    assert p.execution_plan.components["trainer"] == "Finetuner"
-    assert p.execution_plan.notes["routing_mode"] == "compile_only"
-
-
-def test_legacy_mode_also_records_plan(tmp_path):
-    """Even legacy mode records a plan for observability/persistence."""
     p = _pipeline(tmp_path, {"language": "en", "ood_method": OodMethod.NONE})
     p._synergize_data_and_method()
     assert isinstance(p.execution_plan, ExecutionPlan)
+    assert p.execution_plan.recipe_id == "setfit"
+    assert p.execution_plan.components["trainer"] == "SetFitMethod"
+
+
+def test_pinned_recipe_id(tmp_path):
+    p = _pipeline(
+        tmp_path,
+        {"language": "en", "ood_method": OodMethod.NONE, "recipe_id": "finetuner"},
+    )
+    p._synergize_data_and_method()
     assert p.execution_plan.recipe_id == "finetuner"
-
-
-def test_build_execution_plan_maps_ood_variants(tmp_path):
-    p = _pipeline(tmp_path, {"language": "en"})
-    plan_no = p._build_execution_plan("setfit", OodMethod.NONE)
-    plan_ood = p._build_execution_plan("setfit", OodMethod.MSP_OOD)
-    assert plan_no.components["trainer"] == "SetFitMethod"
-    assert plan_ood.components["trainer"] == "SetFitOOD"
+    cls, _ = p._synergize_data_and_method()
+    assert cls.__name__ == "Finetuner"
 
 
 def test_execution_plan_save_load_roundtrip(tmp_path):
@@ -93,7 +95,7 @@ def test_execution_plan_save_load_roundtrip(tmp_path):
         recipe_id="finetuner",
         model_id="bert-base-uncased",
         components={"trainer": "Finetuner"},
-        notes={"routing_mode": "compile_only"},
+        notes={"selection": "probe"},
     )
     path = tmp_path / "execution_plan.json"
     plan.save(path)

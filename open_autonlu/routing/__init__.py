@@ -1,12 +1,10 @@
 """Routing layer: profile -> constraints -> probes -> recipe.
 
-See ``arch_suggestion.md`` for the design. Phase 0 ships the declarative
-scaffolding (TaskSpec, Recipe, RecipeRegistry, ConstraintEngine, ExecutionPlan)
-plus a parity-preserving ``legacy_adapter``. Profiles, probes, the scorer and
-the compiler land in later phases.
+Declarative scaffolding (TaskSpec, Recipe, RecipeRegistry, ConstraintEngine,
+ExecutionPlan) plus empirical selection via encoder probes and PlanScorer.
 
-Note: the top-level package keeps imports light (no torch). ``legacy_adapter``
-pulls the heavy ``methods`` stack and is imported explicitly when needed.
+Note: the top-level package keeps imports light (no torch). Heavy trainer imports
+are lazy inside ``plan_adapter``.
 """
 
 from .capability_profile import (
@@ -20,8 +18,8 @@ from .constraints import ConstraintEngine, ScoredRecipe
 from .dataset_profile import DatasetProfile, extract_dataset_profile
 from .execution_plan import ExecutionPlan, hash_profile
 from .plan_scorer import PlanScorer, ScoredPlan
-from .probe_runner import ProbeContext, ProbeResult, ProbeRunner, frozen_capability_probe
-from .recipe import Recipe
+from .probe_runner import ProbeContext, ProbeResult, ProbeRunner, frozen_capability_probe, recipe_encoder_probe
+from .recipe import ProbeConfig, Recipe
 from .registry import RecipeRegistry
 from .task_spec import (
     BudgetPolicy,
@@ -54,4 +52,6 @@ __all__ = [
     "ProbeContext",
     "ProbeResult",
     "frozen_capability_probe",
+    "recipe_encoder_probe",
+    "ProbeConfig",
 ]

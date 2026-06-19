@@ -16,6 +16,46 @@ from typing import Any, Dict, Optional
 
 import yaml
 
+from .data_prep import DataPrepConfig, data_prep_for_trainer
+
+
+@dataclass
+class ProbeConfig:
+    """Encoder probe settings for empirical recipe selection."""
+
+    probe_type: str = "knn"  # few_shot_knn | knn | linear
+    max_samples: int = 500
+    n_shot: int = 5
+    n_neighbors: int = 5
+    max_folds: int = 3
+
+    @classmethod
+    def from_dict(cls, data: Optional[Dict[str, Any]]) -> "ProbeConfig":
+        if not data:
+            return cls()
+        return cls(
+            probe_type=str(data.get("probe_type", "knn")),
+            max_samples=int(data.get("max_samples", 500)),
+            n_shot=int(data.get("n_shot", 5)),
+            n_neighbors=int(data.get("n_neighbors", 5)),
+            max_folds=int(data.get("max_folds", 3)),
+        )
+
+
+_DEFAULT_PROBE_BY_TRAINER_PREFIX = (
+    ("AncSetFit", "few_shot_knn"),
+    ("SetFit", "knn"),
+    ("Finetuner", "linear"),
+    ("TokenClassification", "linear"),
+)
+
+
+def default_probe_type_for_trainer(trainer: str) -> str:
+    for prefix, probe_type in _DEFAULT_PROBE_BY_TRAINER_PREFIX:
+        if trainer.startswith(prefix):
+            return probe_type
+    return "knn"
+
 
 @dataclass
 class Recipe:
@@ -29,11 +69,10 @@ class Recipe:
         ood: Whether this recipe wires an OOD detector into training.
         ood_scorer_default: Default OOD score ("msp"/"mahalanobis"/...), or None.
         cost_tier: "low" | "medium" | "high" -- consumed by BudgetPolicy/scorer.
-        min_class_size: Soft lower bound on per-class samples (inclusive), or None.
-        max_class_size: Soft upper bound on per-class samples (inclusive), or None.
         requires_anc_label: If True, recipe needs an ``anc_label`` column.
         requires: Raw "requires" block (hard/soft constraints) for the engine.
         components: Extra component slots (augmenter, ood_sampler, ...).
+        probe: Encoder probe config for empirical selection.
     """
 
     id: str
@@ -42,19 +81,14 @@ class Recipe:
     ood: bool = False
     ood_scorer_default: Optional[str] = None
     cost_tier: str = "medium"
-    min_class_size: Optional[int] = None
-    max_class_size: Optional[int] = None
     requires_anc_label: bool = False
     requires: Dict[str, Any] = field(default_factory=dict)
     components: Dict[str, Any] = field(default_factory=dict)
+    probe: ProbeConfig = field(default_factory=ProbeConfig)
+    data_prep: DataPrepConfig = field(default_factory=DataPrepConfig)
 
-    def matches_class_size(self, min_class_size: int) -> bool:
-        """Soft check: does ``min_class_size`` fall within this recipe's regime?"""
-        if self.min_class_size is not None and min_class_size < self.min_class_size:
-            return False
-        if self.max_class_size is not None and min_class_size > self.max_class_size:
-            return False
-        return True
+    def effective_probe_type(self) -> str:
+        return self.probe.probe_type
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "Recipe":
@@ -65,29 +99,38 @@ class Recipe:
             "ood",
             "ood_scorer_default",
             "cost_tier",
-            "min_class_size",
-            "max_class_size",
             "requires_anc_label",
             "requires",
             "components",
+            "probe",
+            "data_prep",
         }
         unknown = set(data) - known
         if unknown:
             raise ValueError(
                 f"Recipe '{data.get('id', '<unknown>')}' has unknown keys: {sorted(unknown)}"
             )
+        trainer = data["trainer"]
+        if data.get("probe") is None:
+            probe = ProbeConfig(probe_type=default_probe_type_for_trainer(trainer))
+        else:
+            probe = ProbeConfig.from_dict(data["probe"])
+        if data.get("data_prep") is None:
+            data_prep = data_prep_for_trainer(trainer)
+        else:
+            data_prep = DataPrepConfig.from_dict(data["data_prep"])
         return cls(
             id=data["id"],
             method_family=data["method_family"],
-            trainer=data["trainer"],
+            trainer=trainer,
             ood=bool(data.get("ood", False)),
             ood_scorer_default=data.get("ood_scorer_default"),
             cost_tier=data.get("cost_tier", "medium"),
-            min_class_size=data.get("min_class_size"),
-            max_class_size=data.get("max_class_size"),
             requires_anc_label=bool(data.get("requires_anc_label", False)),
             requires=data.get("requires") or {},
             components=data.get("components") or {},
+            probe=probe,
+            data_prep=data_prep,
         )
 
     @classmethod

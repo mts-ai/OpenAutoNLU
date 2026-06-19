@@ -43,11 +43,13 @@ def test_anc_recipes_excluded_without_anc_label(engine):
     assert "anc_setfit" not in _ids(out)
 
 
-def test_soft_score_prefers_matching_regime(engine):
-    """For a full-data size, the finetuner recipe should rank top."""
+def test_soft_scores_are_neutral(engine):
+    """Without regime bonuses, all survivors share the same soft score."""
     spec = TaskSpec(ood_policy=OOD_POLICY_NONE)
     out = engine.filter(spec, min_class_size=500, has_anc_label=True)
-    assert out[0].recipe.id == "finetuner"
+    scores = {sr.score for sr in out}
+    assert len(scores) == 1
+    assert scores.pop() == 0.0
 
 
 def test_pinned_recipe_bypasses_ranking(engine):

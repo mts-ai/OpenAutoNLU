@@ -1,15 +1,15 @@
-# Mirrors OOD_METHOD_MAP["finetuning"] -> FinetunerWithOOD (default Mahalanobis)
+# Finetuning with Mahalanobis OOD detector.
 id: finetuner_ood
 method_family: finetuning
 trainer: FinetunerWithOOD
 ood: true
 ood_scorer_default: mahalanobis
 cost_tier: high
-min_class_size: 81        # n_min > MAX_SET_FIT_SIZE (80)
-max_class_size: null
 requires_anc_label: false
 requires:
   ood_policy: [detector]
 components:
   ood_sampler: gibberish
   augmentation: [none, char_noise]
+probe:
+  probe_type: linear

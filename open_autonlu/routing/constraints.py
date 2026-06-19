@@ -113,8 +113,6 @@ class ConstraintEngine:
         return v
 
     def _soft_score(self, recipe: Recipe, min_class_size: Optional[int]) -> float:
-        """Cheap preference score; data-regime fit dominates in Phase 0."""
-        score = 0.0
-        if min_class_size is not None and recipe.matches_class_size(min_class_size):
-            score += 1.0
-        return score
+        """Neutral tie-breaker; empirical probes decide ranking."""
+        del recipe, min_class_size
+        return 0.0

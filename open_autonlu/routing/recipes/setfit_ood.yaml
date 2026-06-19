@@ -1,14 +1,17 @@
-# Mirrors OOD_METHOD_MAP["setfit"] -> SetFitOOD (default MSP)
+# SetFit with MSP OOD detector.
 id: setfit_ood
 method_family: setfit
 trainer: SetFitOOD
 ood: true
 ood_scorer_default: msp
 cost_tier: low
-min_class_size: 6         # MAX_ANC_SET_FIT_SIZE (5) < n_min <= MAX_SET_FIT_SIZE (80)
-max_class_size: 80
 requires_anc_label: false
 requires:
   ood_policy: [detector]
 components:
   ood_sampler: gibberish
+probe:
+  probe_type: knn
+  n_neighbors: 5
+data_prep:
+  downsample_to: 80
